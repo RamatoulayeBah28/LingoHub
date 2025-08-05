@@ -68,4 +68,76 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # LingoHub
+
+A social platform for language learners to share tips, experiences, and connect with fellow language enthusiasts.
+
+## Features
+
+- 🔐 User authentication with email/password and Google OAuth
+- 📝 Create and share language learning posts
+- 💬 Comment on posts with anonymous option
+- 👍 Upvote system for posts
+- 🏷️ Tag system for categorizing posts
+- 🔍 Search and filter functionality
+- 📱 Responsive design
+- 👤 Anonymous posting capability
+
+## Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/RamatoulayeBah28/LingoHub.git
+cd LingoHub/lingohub
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Firebase Configuration
+1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
+2. Enable Authentication (Email/Password and Google)
+3. Create a Firestore database
+4. Copy `src/firebase.example.js` to `src/firebase.js`
+5. Replace the config values with your Firebase project credentials
+
+### 4. Run the development server
+```bash
+npm start
+```
+
+## Firebase Setup Details
+
+### Authentication Setup
+- Enable Email/Password authentication
+- Enable Google authentication
+- Add your domain to authorized domains for production
+
+### Firestore Structure
+```
+posts/
+  - title: string
+  - content: string
+  - authorId: string
+  - authorName: string
+  - upvotes: number
+  - tags: array
+  - isAnonymous: boolean
+  - createdAt: timestamp
+
+  comments/ (subcollection)
+    - content: string
+    - authorId: string
+    - authorName: string
+    - createdAt: timestamp
+
+users/
+  savedPosts/ (subcollection)
+    - postId: string
+    - title: string
+    - authorName: string
+    - savedAt: timestamp
+```
