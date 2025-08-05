@@ -1,0 +1,190 @@
+/* CommentSection.css */
+.comment-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.comments-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.comment-form {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.comment-input-group {
+  margin-bottom: 10px;
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.comment-textarea:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.character-count {
+  color: #666;
+  font-size: 0.8rem;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.submit-comment-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-comment-button:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+}
+
+.submit-comment-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-prompt {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.loading-comments, .no-comments {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.comment {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.comment:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.comment-date {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.comment-content {
+  color: #333;
+  line-height: 1.6;
+}
+
+.comment-content p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .comment-section {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+  
+  .comment-form {
+    padding: 15px;
+  }
+  
+  .comment {
+    padding: 12px;
+  }
+  
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .submit-comment-button {
+    width: 100%;
+  }
+}
+
+/* Anonymous comment checkbox styling */
+.comment-anonymous-group {
+  margin-bottom: 15px;
+}
+
+.comment-anonymous-group .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.comment-anonymous-group .checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+.comment-anonymous-group .checkbox-label:hover {
+  color: #4f46e5;
+}
