@@ -106,6 +106,22 @@
   background: #45a049;
 }
 
+.my-posts-btn {
+  background: #FF9800;
+}
+
+.my-posts-btn:hover {
+  background: #F57C00;
+}
+
+.saved-posts-btn {
+  background: #2196F3;
+}
+
+.saved-posts-btn:hover {
+  background: #1976D2;
+}
+
 .logout-btn {
   background: #f44336;
 }

@@ -233,6 +233,86 @@ export async function removeUpvotePost(postId) {
   }
 }
 
+// Edit/Update a post
+export async function updatePost(postId, updatedData) {
+  const user = auth.currentUser;
+  if (!user) {
+    console.error("User not logged in to update a post.");
+    return false;
+  }
+
+  try {
+    const postDocRef = doc(db, "posts", postId);
+
+    // First check if the post exists and if the user is the author
+    const postDoc = await getDoc(postDocRef);
+    if (!postDoc.exists()) {
+      console.error("Post not found.");
+      return false;
+    }
+
+    const postData = postDoc.data();
+    if (postData.authorId !== user.uid) {
+      console.error("User is not authorized to edit this post.");
+      return false;
+    }
+
+    // Normalize tags if they exist in the update
+    if (updatedData.tags) {
+      updatedData.tags = updatedData.tags
+        .map((tag) => tag.toLowerCase().trim())
+        .filter((tag) => tag.length > 0);
+    }
+
+    // Add updated timestamp
+    const updateWithTimestamp = {
+      ...updatedData,
+      updatedAt: Timestamp.now(),
+    };
+
+    await updateDoc(postDocRef, updateWithTimestamp);
+    console.log("Post", postId, "updated successfully.");
+    return true;
+  } catch (e) {
+    console.error("Error updating post:", e);
+    return false;
+  }
+}
+
+// Delete a post
+export async function deletePost(postId) {
+  const user = auth.currentUser;
+  if (!user) {
+    console.error("User not logged in to delete a post.");
+    return false;
+  }
+
+  try {
+    const postDocRef = doc(db, "posts", postId);
+
+    // First check if the post exists and if the user is the author
+    const postDoc = await getDoc(postDocRef);
+    if (!postDoc.exists()) {
+      console.error("Post not found.");
+      return false;
+    }
+
+    const postData = postDoc.data();
+    if (postData.authorId !== user.uid) {
+      console.error("User is not authorized to delete this post.");
+      return false;
+    }
+
+    // Delete the post document
+    await deleteDoc(postDocRef);
+    console.log("Post", postId, "deleted successfully.");
+    return true;
+  } catch (e) {
+    console.error("Error deleting post:", e);
+    return false;
+  }
+}
+
 // Example usage functions (commented out):
 /*
 // createNewPost("Learning Japanese Kanji", "What are your favorite kanji learning methods?", "https://example.com/kanji-img.jpg");
@@ -241,4 +321,6 @@ export async function removeUpvotePost(postId) {
 // removeSavedPostForUser("post-id");
 // upvotePost("post-id");
 // removeUpvotePost("post-id");
+// updatePost("post-id", { title: "New Title", content: "New Content" });
+// deletePost("post-id");
 */

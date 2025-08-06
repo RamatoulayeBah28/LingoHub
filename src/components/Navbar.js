@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Navbar.css";
 
-function Navbar({ onCreatePost, onShowSavedPosts, onSearch }) {
+function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
   const { currentUser, logout } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -52,6 +52,12 @@ function Navbar({ onCreatePost, onShowSavedPosts, onSearch }) {
                 onClick={onCreatePost}
               >
                 Create Post
+              </button>
+              <button
+                className="nav-button my-posts-btn"
+                onClick={onShowMyPosts}
+              >
+                My Posts
               </button>
               <button
                 className="nav-button saved-posts-btn"

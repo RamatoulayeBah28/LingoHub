@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { createNewPost } from "../services/postService";
+import { createNewPost, updatePost } from "../services/postService";
 import "../styles/PostForm.css";
 
-function PostForm({ onClose, onPostCreated }) {
+function PostForm({
+  onClose,
+  onPostCreated,
+  editingPost = null,
+  isEditing = false,
+}) {
   const { currentUser } = useAuth();
   const [formData, setFormData] = useState({
     title: "",
@@ -15,6 +20,19 @@ function PostForm({ onClose, onPostCreated }) {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  // Populate form when editing
+  useEffect(() => {
+    if (isEditing && editingPost) {
+      setFormData({
+        title: editingPost.title || "",
+        content: editingPost.content || "",
+        imageUrl: editingPost.imageUrl || "",
+      });
+      setTags(editingPost.tags || []);
+      setIsAnonymous(editingPost.isAnonymous || false);
+    }
+  }, [isEditing, editingPost]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +72,9 @@ function PostForm({ onClose, onPostCreated }) {
     e.preventDefault();
 
     if (!currentUser) {
-      setError("You must be logged in to create a post");
+      setError(
+        `You must be logged in to ${isEditing ? "edit" : "create"} a post`
+      );
       return;
     }
 
@@ -67,28 +87,45 @@ function PostForm({ onClose, onPostCreated }) {
     setError("");
 
     try {
-      const postId = await createNewPost(
-        formData.title.trim(),
-        formData.content.trim(),
-        formData.imageUrl.trim(),
-        tags, // Pass tags to createNewPost
-        isAnonymous // Pass anonymous flag
-      );
+      let success = false;
 
-      if (postId) {
-        // Reset form
-        setFormData({
-          title: "",
-          content: "",
-          imageUrl: "",
+      if (isEditing && editingPost) {
+        // Update existing post
+        success = await updatePost(editingPost.id, {
+          title: formData.title.trim(),
+          content: formData.content.trim(),
+          imageUrl: formData.imageUrl.trim(),
+          tags: tags,
+          isAnonymous: isAnonymous,
         });
-        setTags([]);
-        setTagInput("");
-        setIsAnonymous(false);
+      } else {
+        // Create new post
+        const postId = await createNewPost(
+          formData.title.trim(),
+          formData.content.trim(),
+          formData.imageUrl.trim(),
+          tags,
+          isAnonymous
+        );
+        success = !!postId;
+      }
+
+      if (success) {
+        // Reset form only if creating new post
+        if (!isEditing) {
+          setFormData({
+            title: "",
+            content: "",
+            imageUrl: "",
+          });
+          setTags([]);
+          setTagInput("");
+          setIsAnonymous(false);
+        }
 
         // Notify parent component
         if (onPostCreated) {
-          onPostCreated(postId);
+          onPostCreated();
         }
 
         // Close the form
@@ -96,11 +133,20 @@ function PostForm({ onClose, onPostCreated }) {
           onClose();
         }
       } else {
-        setError("Failed to create post. Please try again.");
+        setError(
+          `Failed to ${isEditing ? "update" : "create"} post. Please try again.`
+        );
       }
     } catch (error) {
-      console.error("Error creating post:", error);
-      setError("An error occurred while creating the post");
+      console.error(
+        `Error ${isEditing ? "updating" : "creating"} post:`,
+        error
+      );
+      setError(
+        `An error occurred while ${
+          isEditing ? "updating" : "creating"
+        } the post`
+      );
     } finally {
       setIsLoading(false);
     }
@@ -110,7 +156,7 @@ function PostForm({ onClose, onPostCreated }) {
     <div className="post-form-overlay">
       <div className="post-form-container">
         <div className="post-form-header">
-          <h2>Create New Post</h2>
+          <h2>{isEditing ? "Edit Post" : "Create New Post"}</h2>
           <button className="close-button" onClick={onClose}>
             ✕
           </button>
@@ -230,7 +276,13 @@ function PostForm({ onClose, onPostCreated }) {
               className="submit-button"
               disabled={isLoading}
             >
-              {isLoading ? "Creating..." : "Create Post"}
+              {isLoading
+                ? isEditing
+                  ? "Updating..."
+                  : "Creating..."
+                : isEditing
+                ? "Update Post"
+                : "Create Post"}
             </button>
           </div>
         </form>

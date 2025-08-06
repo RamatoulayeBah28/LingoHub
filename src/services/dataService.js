@@ -116,19 +116,38 @@ export async function getUserSavedPosts(userId) {
 // Get posts by a specific author
 export async function getPostsByAuthor(authorId) {
   try {
+    console.log("Searching for posts by authorId:", authorId);
     const postsQuery = query(
       collection(db, "posts"),
-      where("authorId", "==", authorId),
-      orderBy("createdAt", "desc")
+      where("authorId", "==", authorId)
     );
 
     const querySnapshot = await getDocs(postsQuery);
     const posts = [];
 
     querySnapshot.forEach((doc) => {
-      posts.push({ id: doc.id, ...doc.data() });
+      const postData = doc.data();
+      console.log(
+        "Found post with authorId:",
+        postData.authorId,
+        "Title:",
+        postData.title
+      );
+      posts.push({ id: doc.id, ...postData });
     });
 
+    // Sort posts by createdAt in JavaScript instead of Firestore
+    posts.sort((a, b) => {
+      const dateA = a.createdAt?.toDate
+        ? a.createdAt.toDate()
+        : new Date(a.createdAt);
+      const dateB = b.createdAt?.toDate
+        ? b.createdAt.toDate()
+        : new Date(b.createdAt);
+      return dateB - dateA; // Most recent first
+    });
+
+    console.log("Total posts found:", posts.length);
     return posts;
   } catch (e) {
     console.error("Error getting posts by author:", e);

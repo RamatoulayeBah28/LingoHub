@@ -7,16 +7,20 @@ import Signup from "./components/SIgnup";
 import Navbar from "./components/Navbar";
 import HomeFeed from "./components/HomeFeed";
 import Dashboard from "./components/Dashboard";
+import MyPosts from "./components/MyPosts";
 import "./styles/App.css";
 
 function AppContent() {
   const { currentUser } = useAuth();
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showSavedPosts, setShowSavedPosts] = useState(false);
+  const [showMyPosts, setShowMyPosts] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleCreatePost = () => {
     setShowCreateForm(true);
+    setShowSavedPosts(false);
+    setShowMyPosts(false);
   };
 
   const handleCloseCreateForm = () => {
@@ -25,11 +29,18 @@ function AppContent() {
 
   const handleShowSavedPosts = () => {
     setShowSavedPosts(true);
+    setShowMyPosts(false);
+  };
+
+  const handleShowMyPosts = () => {
+    setShowMyPosts(true);
+    setShowSavedPosts(false);
   };
 
   const handleSearch = (term) => {
     setSearchTerm(term);
     setShowSavedPosts(false); // Return to main feed when searching
+    setShowMyPosts(false); // Return to main feed when searching
   };
 
   // Show login/signup if user is not authenticated
@@ -54,11 +65,14 @@ function AppContent() {
       <Navbar
         onCreatePost={handleCreatePost}
         onShowSavedPosts={handleShowSavedPosts}
+        onShowMyPosts={handleShowMyPosts}
         onSearch={handleSearch}
       />
       <main className="main-content">
         {showSavedPosts ? (
           <Dashboard onBack={() => setShowSavedPosts(false)} />
+        ) : showMyPosts ? (
+          <MyPosts onBack={() => setShowMyPosts(false)} />
         ) : (
           <HomeFeed
             showCreateForm={showCreateForm}

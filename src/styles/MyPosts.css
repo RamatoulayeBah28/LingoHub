@@ -1,0 +1,184 @@
+/* MyPosts.css */
+.my-posts {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.my-posts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.my-posts h1 {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.posts-count {
+  color: #666;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.my-posts-content {
+  min-height: 400px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #333;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.empty-state h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.my-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 10px 0;
+}
+
+.my-post-card-wrapper {
+  position: relative;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.edit-button, .delete-button {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.edit-button {
+  background: #667eea;
+  color: white;
+}
+
+.edit-button:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+.delete-button {
+  background: #f56565;
+  color: white;
+}
+
+.delete-button:hover {
+  background: #e53e3e;
+  transform: translateY(-1px);
+}
+
+.error-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #e53e3e;
+  font-size: 1.2rem;
+  background: rgba(245, 101, 101, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(245, 101, 101, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .my-posts {
+    padding: 15px;
+  }
+
+  .my-posts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .my-posts h1 {
+    font-size: 2rem;
+  }
+
+  .my-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .post-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .edit-button, .delete-button {
+    padding: 10px 16px;
+  }
+}
