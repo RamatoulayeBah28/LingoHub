@@ -1,5 +1,6 @@
 // App.js
 import React, { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Login from "./components/Login";
 import Signup from "./components/SIgnup";
@@ -74,6 +75,7 @@ function App() {
   return (
     <AuthProvider>
       <AppContent />
+      <Analytics />
     </AuthProvider>
   );
 }
