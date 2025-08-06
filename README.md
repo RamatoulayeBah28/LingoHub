@@ -1,159 +1,92 @@
-# Getting Started with Create React App
+# Web Development Final Project - *LingoHub*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Submitted by: **Ramatoulaye Bah**
 
-## Available Scripts
+This web app: **LingoHub is a modern social platform designed for language enthusiasts to connect, share experiences, and learn from each other.**
 
-In the project directory, you can run:
+Time spent: **8** hours spent in total
 
-### `npm start`
+## Required Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The following **required** functionality is completed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+- [x] **Web app includes a create form that allows the user to create posts**
+  - Form requires users to add a post title
+  - Forms should have the *option* for users to add: 
+    - additional textual content
+    - an image added as an external image URL
+- [x] **Web app includes a home feed displaying previously created posts**
+  - Web app must include home feed displaying previously created posts
+  - By default, each post on the posts feed should show only the post's:
+    - creation time
+    - title 
+    - upvotes count
+  - Clicking on a post should direct the user to a new page for the selected post
+- [x] **Users can view posts in different ways**
+  - Users can sort posts by either:
+    -  creation time
+    -  upvotes count
+  - Users can search for posts by title
+- [x] **Users can interact with each post in different ways**
+  - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
+    - content
+    - image
+    - comments
+  - Users can leave comments underneath a post on the post page
+  - Each post includes an upvote button on the post page. 
+    - Each click increases the post's upvotes count by one
+    - Users can upvote any post any number of times
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] **A post that a user previously created can be edited or deleted from its post pages**
+  - After a user creates a new post, they can go back and edit the post
+  - A previously created post can be deleted from its post page
 
-### `npm run build`
+The following **optional** features are implemented:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] Web app implements pseudo-authentication
+  - Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
+  - **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
+  - For both options, only the original user author of a post can update or delete it
+- [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post
+  - Users can repost a previous post by referencing its post ID
+  - On the post page of the new post, the referenced post is displayed and linked, creating a thread
+- [x] Users can customize the interface
+  - e.g., selecting the color scheme or showing the content and image of each post on the home feed
+- [x] Users can add more characterics to their posts
+  - Users can share and view web videos
+  - Users can set flags such as "Question" or "Opinion" while creating a post
+  - Users can filter posts by flags on the home feed
+  - Users can upload images directly from their local machine as an image file
+- [ ] Web app displays a loading animation whenever data is being fetched
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The following **additional** features are implemented:
 
-### `npm run eject`
+* [ ] List anything else that you added to improve the site's functionality!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Video Walkthrough
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Here's a walkthrough of implemented user stories:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://imgur.com/a/BzMFTu4
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes
 
-## Learn More
+Describe any challenges encountered while building the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Copyright [2025] [Ramatoulaye Bah]
 
-### Code Splitting
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+        http://www.apache.org/licenses/LICENSE-2.0
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# LingoHub
-
-A social platform for language learners to share tips, experiences, and connect with fellow language enthusiasts.
-
-## Features
-
-- 🔐 User authentication with email/password and Google OAuth
-- 📝 Create and share language learning posts
-- 💬 Comment on posts with anonymous option
-- 👍 Upvote system for posts
-- 🏷️ Tag system for categorizing posts
-- 🔍 Search and filter functionality
-- 📱 Responsive design
-- 👤 Anonymous posting capability
-
-## Setup Instructions
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/RamatoulayeBah28/LingoHub.git
-cd LingoHub/lingohub
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Firebase Configuration
-1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
-2. Enable Authentication (Email/Password and Google)
-3. Create a Firestore database
-4. Replace the values in `.env.local` with your Firebase project credentials
-
-### 4. Run the development server
-```bash
-npm start
-```
-
-## Deployment
-
-### Vercel Deployment
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add the following environment variables in Vercel dashboard:
-   - `REACT_APP_FIREBASE_API_KEY`
-   - `REACT_APP_FIREBASE_AUTH_DOMAIN`
-   - `REACT_APP_FIREBASE_PROJECT_ID`
-   - `REACT_APP_FIREBASE_STORAGE_BUCKET`
-   - `REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
-   - `REACT_APP_FIREBASE_APP_ID`
-   - `REACT_APP_FIREBASE_MEASUREMENT_ID`
-4. Add your Vercel domain to Firebase authorized domains
-5. Deploy!
-
-## Firebase Setup Details
-
-### Authentication Setup
-- Enable Email/Password authentication
-- Enable Google authentication
-- Add your domain to authorized domains for production
-
-### Firestore Structure
-```
-posts/
-  - title: string
-  - content: string
-  - authorId: string
-  - authorName: string
-  - upvotes: number
-  - tags: array
-  - isAnonymous: boolean
-  - createdAt: timestamp
-
-  comments/ (subcollection)
-    - content: string
-    - authorId: string
-    - authorName: string
-    - createdAt: timestamp
-
-users/
-  savedPosts/ (subcollection)
-    - postId: string
-    - title: string
-    - authorName: string
-    - savedAt: timestamp
-```
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
