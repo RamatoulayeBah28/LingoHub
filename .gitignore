@@ -22,5 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Firebase config (contains API keys)
-src/firebase.js
+# Environment variables with sensitive data
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

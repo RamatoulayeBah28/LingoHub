@@ -101,13 +101,29 @@ npm install
 1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
 2. Enable Authentication (Email/Password and Google)
 3. Create a Firestore database
-4. Copy `src/firebase.example.js` to `src/firebase.js`
-5. Replace the config values with your Firebase project credentials
+4. Replace the values in `.env.local` with your Firebase project credentials
 
 ### 4. Run the development server
 ```bash
 npm start
 ```
+
+## Deployment
+
+### Vercel Deployment
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add the following environment variables in Vercel dashboard:
+   - `REACT_APP_FIREBASE_API_KEY`
+   - `REACT_APP_FIREBASE_AUTH_DOMAIN`
+   - `REACT_APP_FIREBASE_PROJECT_ID`
+   - `REACT_APP_FIREBASE_STORAGE_BUCKET`
+   - `REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
+   - `REACT_APP_FIREBASE_APP_ID`
+   - `REACT_APP_FIREBASE_MEASUREMENT_ID`
+4. Add your Vercel domain to Firebase authorized domains
+5. Deploy!
 
 ## Firebase Setup Details
 

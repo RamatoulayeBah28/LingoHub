@@ -84,7 +84,11 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
     }
 
     try {
-      const commentId = await addCommentToPost(post.id, commentContent, isAnonymous);
+      const commentId = await addCommentToPost(
+        post.id,
+        commentContent,
+        isAnonymous
+      );
       if (commentId) {
         // Reload comments to show the new one
         await reloadComments();

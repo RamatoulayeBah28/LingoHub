@@ -41,7 +41,13 @@ interface SavedPostData {
 */
 
 // 1. Storing a New Post (posts collection)
-export async function createNewPost(title, content, imageUrl, tags = [], isAnonymous = false) {
+export async function createNewPost(
+  title,
+  content,
+  imageUrl,
+  tags = [],
+  isAnonymous = false
+) {
   // Get current user's info (assuming they are logged in)
   const user = auth.currentUser;
   if (!user) {
@@ -60,7 +66,7 @@ export async function createNewPost(title, content, imageUrl, tags = [], isAnony
     imageUrl: imageUrl || "", // Use empty string if no image URL
     tags: normalizedTags, // Add tags array
     authorId: user.uid,
-    authorName: isAnonymous ? "Anonymous" : (user.displayName || "Anonymous"), // Use "Anonymous" if isAnonymous is true
+    authorName: isAnonymous ? "Anonymous" : user.displayName || "Anonymous", // Use "Anonymous" if isAnonymous is true
     isAnonymous: isAnonymous, // Add anonymous flag
     upvotes: 0,
     createdAt: Timestamp.now(), // Firestore's server timestamp
@@ -78,7 +84,11 @@ export async function createNewPost(title, content, imageUrl, tags = [], isAnony
 }
 
 // 2. Storing a Comment (Subcollection under posts)
-export async function addCommentToPost(postId, commentContent, isAnonymous = false) {
+export async function addCommentToPost(
+  postId,
+  commentContent,
+  isAnonymous = false
+) {
   const user = auth.currentUser;
   if (!user) {
     console.error("User not logged in to add a comment.");
@@ -88,7 +98,7 @@ export async function addCommentToPost(postId, commentContent, isAnonymous = fal
   const comment = {
     content: commentContent,
     authorId: user.uid,
-    authorName: isAnonymous ? "Anonymous" : (user.displayName || "Anonymous"),
+    authorName: isAnonymous ? "Anonymous" : user.displayName || "Anonymous",
     createdAt: Timestamp.now(),
   };
 
