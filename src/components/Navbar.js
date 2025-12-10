@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Navbar.css";
+import { FaSearch } from "react-icons/fa";
 
 function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
   const { currentUser, logout } = useAuth();
@@ -38,7 +39,7 @@ function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
             className="search-input"
           />
           <button type="submit" className="search-button">
-            🔍
+            <FaSearch />
           </button>
         </form>
 

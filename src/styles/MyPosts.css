@@ -25,6 +25,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  font-family: "Georgia Pro";
 }
 
 .back-button:hover {
@@ -39,9 +40,12 @@
   font-weight: 600;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Georgia Pro";
+
 }
 
 .posts-count {
+  font-family: "Georgia Pro";
   color: #666;
   font-size: 1.1rem;
   background: rgba(0, 0, 0, 0.05);
@@ -123,22 +127,22 @@
 }
 
 .edit-button {
-  background: #667eea;
-  color: white;
+  background: #8c8c44;
+  color: #fbf6f1;
 }
 
 .edit-button:hover {
-  background: #5a67d8;
+  background: #8c8c44ba;
   transform: translateY(-1px);
 }
 
 .delete-button {
-  background: #f56565;
-  color: white;
+  background: #8B3A3A;
+  color: #fbf6f1;
 }
 
 .delete-button:hover {
-  background: #e53e3e;
+  background: #8b3a3aba;
   transform: translateY(-1px);
 }
 
@@ -166,6 +170,8 @@
 
   .my-posts h1 {
     font-size: 2rem;
+      font-family: "Georgia Pro";
+
   }
 
   .my-posts-grid {

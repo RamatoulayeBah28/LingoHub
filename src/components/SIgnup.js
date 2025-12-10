@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Auth.css";
+import { FaGoogle } from "react-icons/fa";
 
 function Signup() {
   const emailRef = useRef();
@@ -97,10 +98,11 @@ function Signup() {
 
   return (
     <div className="auth-form">
-      <form onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
-        {error && <p className="error-message">{error}</p>}
+      <h2>Sign Up</h2>
+      {error && <p className="error-message">{error}</p>}
+      <hr className="my-4 border-gray-200" />
 
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
           ref={emailRef}
@@ -115,22 +117,27 @@ function Signup() {
           required
           disabled={loading}
         />
-        <button type="submit" disabled={loading}>
-          {loading ? "Signing up..." : "Sign Up"}
-        </button>
       </form>
 
-      <div className="auth-divider">
-        <span>or</span>
-      </div>
+      <div className="auth-buttons-row">
+        <button
+          className="auth-submit-button"
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? "..." : "Sign Up"}
+        </button>
 
-      <button
-        className="google-signin-button"
-        onClick={handleGoogleSignIn}
-        disabled={loading}
-      >
-        🔍 Continue with Google
-      </button>
+        <span className="auth-divider-text">or</span>
+
+        <button
+          className="google-signin-button"
+          onClick={handleGoogleSignIn}
+          disabled={loading}
+        >
+          <FaGoogle />
+        </button>
+      </div>
     </div>
   );
 }

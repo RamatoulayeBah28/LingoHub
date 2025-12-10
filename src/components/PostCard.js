@@ -12,6 +12,9 @@ import {
   getPostUpvoteCount,
 } from "../services/dataService";
 import "../styles/PostCard.css";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
+import { AiTwotoneLike } from "react-icons/ai";
 
 function PostCard({
   post,
@@ -159,7 +162,7 @@ function PostCard({
           disabled={isLoading}
           title={isSaved ? "Remove from saved" : "Save post"}
         >
-          {isLoading ? "⏳" : isSaved ? "❤️" : "🤍"}
+          {isLoading ? "⏳" : isSaved ? <IoMdHeart /> : <IoMdHeartEmpty />}
         </button>
       </div>
 
@@ -195,7 +198,14 @@ function PostCard({
             disabled={upvoteLoading}
             title={hasUpvoted ? "Remove upvote" : "Upvote post"}
           >
-            {upvoteLoading ? "⏳" : hasUpvoted ? "👍" : "👍"} {upvoteCount}
+            {upvoteLoading ? (
+              "⏳"
+            ) : hasUpvoted ? (
+              <AiTwotoneLike />
+            ) : (
+              <AiTwotoneLike />
+            )}{" "}
+            {upvoteCount}
           </button>
         </div>
       </div>

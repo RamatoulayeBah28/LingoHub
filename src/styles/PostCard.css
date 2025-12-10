@@ -97,7 +97,7 @@
 
 .post-author {
   font-weight: 500;
-  color: #667eea;
+  color: #8c8c44;
   font-size: 0.9rem;
 }
 
@@ -131,22 +131,22 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
+  background: rgba(140, 140, 68, 0.1);
+  color: #8c8c44;
 }
 
 .upvote-button:hover {
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(140, 140, 68, 0.2);
   transform: scale(1.05);
 }
 
 .upvote-button.upvoted {
-  background: #667eea;
+  background: #8c8c44;
   color: white;
 }
 
 .upvote-button.upvoted:hover {
-  background: #5a67d8;
+  background: #8c8c44ba;
 }
 
 .upvote-button:disabled {

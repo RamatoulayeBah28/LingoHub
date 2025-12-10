@@ -39,6 +39,8 @@
   font-weight: 600;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Georgia Pro";
+
 }
 
 .dashboard-content {
@@ -102,6 +104,8 @@
 
   .dashboard h1 {
     font-size: 2rem;
+      font-family: "Georgia Pro";
+
   }
 
   .saved-posts-grid {
@@ -134,6 +138,8 @@
 
   .dashboard h1 {
     font-size: 1.8rem;
+      font-family: "Georgia Pro";
+
   }
 
   .saved-posts-grid {

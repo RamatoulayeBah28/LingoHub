@@ -4,6 +4,7 @@ import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
 import PostForm from "./PostForm";
 import "../styles/HomeFeed.css";
+import { LuRefreshCcw } from "react-icons/lu";
 
 function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
   const [posts, setPosts] = useState([]);
@@ -152,7 +153,7 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
             className="refresh-button"
             disabled={loading}
           >
-            🔄 Refresh
+            <LuRefreshCcw />
           </button>
         </div>
 

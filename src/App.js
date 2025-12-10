@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Login from "./components/Login";
-import Signup from "./components/SIgnup";
+import Signup from "./components/SignUp";
 import Navbar from "./components/Navbar";
 import HomeFeed from "./components/HomeFeed";
 import Dashboard from "./components/Dashboard";
@@ -46,10 +46,20 @@ function AppContent() {
   // Show login/signup if user is not authenticated
   if (!currentUser) {
     return (
-      <div className="auth-container">
+      <div
+        className="auth-container"
+        style={{
+          backgroundImage: "url(/img/home.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="auth-header">
           <h1>Welcome to LingoHub</h1>
-          <p>Connect with language lovers worldwide</p>
+          <div className="auth-subtitle-container">
+            <p>Connect with language lovers worldwide</p>
+          </div>
         </div>
         <div className="auth-forms">
           <Signup />

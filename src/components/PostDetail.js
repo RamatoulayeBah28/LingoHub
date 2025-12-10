@@ -14,6 +14,9 @@ import {
 } from "../services/postService";
 import CommentSection from "./CommentSection";
 import "../styles/PostDetail.css";
+import { IoMdHeart } from "react-icons/io";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { AiTwotoneLike } from "react-icons/ai";
 
 function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
   const { currentUser } = useAuth();
@@ -200,7 +203,13 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
                 disabled={isLoading}
                 title={isSaved ? "Remove from saved" : "Save post"}
               >
-                {isLoading ? "⏳" : isSaved ? "❤️ Saved" : "🤍 Save"}
+                {isLoading ? (
+                  "⏳"
+                ) : isSaved ? (
+                  <IoMdHeart />
+                ) : (
+                  <IoMdHeartEmpty />
+                )}
               </button>
             </div>
 
@@ -213,7 +222,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
                 disabled={upvoteLoading}
                 title={hasUpvoted ? "Remove upvote" : "Upvote post"}
               >
-                {upvoteLoading ? "⏳" : "👍"} {upvoteCount}
+                {upvoteLoading ? "⏳" : <AiTwotoneLike />} {upvoteCount}
               </button>
             </div>
           </header>
