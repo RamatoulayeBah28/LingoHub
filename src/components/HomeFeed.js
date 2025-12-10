@@ -1,4 +1,10 @@
-import React, { useState, useEffect } from "react";
+/*
+The HomeFeed component displays a feed of posts with filtering, sorting, and searching capabilities.
+Users can filter posts by tags, sort by date or upvotes, and search for specific terms.
+It also handles loading states, error states, and displays post details in a modal.
+*/
+
+import { useState, useEffect } from "react";
 import { getAllPosts, getPostsByTags } from "../services/dataService";
 import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
@@ -11,7 +17,7 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedPost, setSelectedPost] = useState(null);
-  const [sortBy, setSortBy] = useState("date"); // 'date' or 'upvotes'
+  const [sortBy, setSortBy] = useState("date");
   const [error, setError] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
@@ -90,7 +96,7 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
     setSelectedPost(null);
   };
 
-  const handlePostCreated = async (postId) => {
+  const handlePostCreated = async () => {
     // Reload posts to include the new one
     await loadPosts();
     if (onCloseCreateForm) {

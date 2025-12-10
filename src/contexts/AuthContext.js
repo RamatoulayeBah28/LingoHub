@@ -1,4 +1,7 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+/* 
+Manages user authentication state and provides authentication functions such as signup, login, logout, and login with Google.
+*/
+import { createContext, useContext, useState, useEffect } from "react";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,

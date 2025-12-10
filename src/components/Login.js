@@ -1,5 +1,5 @@
 // Login.js
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Auth.css";
 import { FaGoogle } from "react-icons/fa";

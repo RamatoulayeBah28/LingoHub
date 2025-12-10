@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+/*
+The CommentSection component displays a list of comments for a post and provides a form for adding new comments.
+*/
+import { useState } from "react";
 import "../styles/CommentSection.css";
 
 function CommentSection({ comments, onAddComment, loading, currentUser }) {

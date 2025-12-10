@@ -1,4 +1,6 @@
-// Additional Firestore read operations for LingoHub
+/*
+The dataService module provides functions to interact with Firestore for fetching posts, comments, user saved posts, and tags.  
+*/
 import { db } from "../firebase";
 import {
   collection,

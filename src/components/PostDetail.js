@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from "react";
+/*
+The PostDetail component displays detailed information about a specific post,
+including title, content, author, date, image, tags, and comments.
+It allows users to add comments, upvote the post, and save/unsave the post.
+*/
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import {
   getCommentsForPost,

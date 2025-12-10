@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+/*
+The MyPosts component displays the posts created by the currently logged-in user.
+It allows users to view, edit, and delete their posts, as well as see post details in a modal.
+*/
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { getPostsByAuthor } from "../services/dataService";
 import { deletePost } from "../services/postService";

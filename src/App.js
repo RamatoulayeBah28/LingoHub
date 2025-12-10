@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Login from "./components/Login";
-import Signup from "./components/SignUp";
+import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
 import HomeFeed from "./components/HomeFeed";
 import Dashboard from "./components/Dashboard";
@@ -62,7 +62,7 @@ function AppContent() {
           </div>
         </div>
         <div className="auth-forms">
-          <Signup />
+          <SignUp />
           <Login />
         </div>
       </div>

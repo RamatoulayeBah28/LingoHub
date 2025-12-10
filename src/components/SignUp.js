@@ -1,10 +1,10 @@
-// Signup.js
-import React, { useRef, useState } from "react";
+// SignUp.js
+import { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Auth.css";
 import { FaGoogle } from "react-icons/fa";
 
-function Signup() {
+function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { signup, loginWithGoogle } = useAuth();
@@ -142,4 +142,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

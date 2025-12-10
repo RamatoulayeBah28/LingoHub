@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+/*
+The PostForm component provides a form in a modal form for creating and editing posts in the user dashboard.
+It collects title, content, optional image URLs, tags, and lets the user choose to post anonymously or not.
+*/
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { createNewPost, updatePost } from "../services/postService";
 import "../styles/PostForm.css";
@@ -53,6 +57,10 @@ function PostForm({
     }
   };
 
+  const handleAnonymousChange = (e) => {
+    setIsAnonymous(e.target.checked);
+  };
+
   const addTag = () => {
     const newTag = tagInput.trim();
     if (
@@ -69,6 +77,9 @@ function PostForm({
   };
 
   const handleSubmit = async (e) => {
+    // Prevent multiple submissions
+    if (isLoading) return;
+
     e.preventDefault();
 
     if (!currentUser) {
@@ -111,7 +122,7 @@ function PostForm({
       }
 
       if (success) {
-        // Reset form only if creating new post
+        // Reset form when creating new post
         if (!isEditing) {
           setFormData({
             title: "",
@@ -123,12 +134,10 @@ function PostForm({
           setIsAnonymous(false);
         }
 
-        // Notify parent component
+        // Notify app component
         if (onPostCreated) {
           onPostCreated();
         }
-
-        // Close the form
         if (onClose) {
           onClose();
         }
@@ -253,7 +262,7 @@ function PostForm({
               <input
                 type="checkbox"
                 checked={isAnonymous}
-                onChange={(e) => setIsAnonymous(e.target.checked)}
+                onChange={(e) => handleAnonymousChange(e)}
               />
               Post anonymously
             </label>

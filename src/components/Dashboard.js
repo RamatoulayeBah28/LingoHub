@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+/*
+The Dashboard component displays the user's saved posts in a grid layout.
+It allows users to view details of each post and manage their saved posts.
+*/
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { getUserSavedPosts, getPostById } from "../services/dataService";
 import PostCard from "./PostCard";

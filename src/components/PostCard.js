@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from "react";
+/*
+The PostCard component displays individual post information in a card format.
+It includes functionality for saving posts, upvoting posts, and viewing post details 
+before selecting the post to see more.
+*/
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import {
   savePostForUser,
