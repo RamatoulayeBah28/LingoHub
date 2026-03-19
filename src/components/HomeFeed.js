@@ -22,12 +22,15 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
   const [selectedTags, setSelectedTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
 
+  // useCallback in the future
   useEffect(() => {
     loadPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTags]); // Reload when tags change
 
   useEffect(() => {
     filterAndSortPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts, searchTerm, sortBy, selectedTags]);
 
   const loadPosts = async () => {

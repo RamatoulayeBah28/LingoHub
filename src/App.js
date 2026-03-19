@@ -1,7 +1,7 @@
 // App.js
 import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/Navbar";
 import HomeFeed from "./components/HomeFeed";
 import Dashboard from "./components/Dashboard";
@@ -12,7 +12,6 @@ import AuthPage from "./components/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function AppContent() {
-  const { currentUser } = useAuth();
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const location = useLocation();
