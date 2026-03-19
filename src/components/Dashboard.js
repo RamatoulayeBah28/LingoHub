@@ -8,13 +8,15 @@ import { getUserSavedPosts, getPostById } from "../services/dataService";
 import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
 import "../styles/Dashboard.css";
+import { useNavigate } from "react-router-dom";
 
-function Dashboard({ onBack }) {
+function Dashboard() {
   const { currentUser } = useAuth();
   const [savedPosts, setSavedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedPost, setSelectedPost] = useState(null);
   const [showPostDetail, setShowPostDetail] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadSavedPosts = async () => {
@@ -29,7 +31,7 @@ function Dashboard({ onBack }) {
             return fullPost
               ? { ...fullPost, savedAt: savedPost.savedAt }
               : null;
-          })
+          }),
         );
 
         // Filter out null posts (posts that might have been deleted)
@@ -57,7 +59,7 @@ function Dashboard({ onBack }) {
         savedPostsData.map(async (savedPost) => {
           const fullPost = await getPostById(savedPost.postId);
           return fullPost ? { ...fullPost, savedAt: savedPost.savedAt } : null;
-        })
+        }),
       );
 
       // Filter out null posts (posts that might have been deleted)
@@ -88,7 +90,7 @@ function Dashboard({ onBack }) {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <button className="back-button" onClick={onBack}>
+        <button className="back-button" onClick={() => navigate("/")}>
           ← Back to Feed
         </button>
         <h1>Saved Posts</h1>

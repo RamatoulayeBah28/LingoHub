@@ -2,94 +2,73 @@
 import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
 import HomeFeed from "./components/HomeFeed";
 import Dashboard from "./components/Dashboard";
 import MyPosts from "./components/MyPosts";
 import "./styles/App.css";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import AuthPage from "./components/AuthPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function AppContent() {
   const { currentUser } = useAuth();
   const [showCreateForm, setShowCreateForm] = useState(false);
-  const [showSavedPosts, setShowSavedPosts] = useState(false);
-  const [showMyPosts, setShowMyPosts] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const location = useLocation();
 
   const handleCreatePost = () => {
     setShowCreateForm(true);
-    setShowSavedPosts(false);
-    setShowMyPosts(false);
   };
 
   const handleCloseCreateForm = () => {
     setShowCreateForm(false);
   };
 
-  const handleShowSavedPosts = () => {
-    setShowSavedPosts(true);
-    setShowMyPosts(false);
-  };
-
-  const handleShowMyPosts = () => {
-    setShowMyPosts(true);
-    setShowSavedPosts(false);
-  };
-
   const handleSearch = (term) => {
     setSearchTerm(term);
-    setShowSavedPosts(false); // Return to main feed when searching
-    setShowMyPosts(false); // Return to main feed when searching
   };
-
-  // Show login/signup if user is not authenticated
-  if (!currentUser) {
-    return (
-      <div
-        className="auth-container"
-        style={{
-          backgroundImage: "url(/img/home.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="auth-header">
-          <h1>Welcome to LingoHub</h1>
-          <div className="auth-subtitle-container">
-            <p>Connect with language lovers worldwide</p>
-          </div>
-        </div>
-        <div className="auth-forms">
-          <SignUp />
-          <Login />
-        </div>
-      </div>
-    );
-  }
 
   // Show main app if user is authenticated
   return (
     <div className="app">
-      <Navbar
-        onCreatePost={handleCreatePost}
-        onShowSavedPosts={handleShowSavedPosts}
-        onShowMyPosts={handleShowMyPosts}
-        onSearch={handleSearch}
-      />
+      {location.pathname !== "/auth" && (
+        <Navbar onCreatePost={handleCreatePost} onSearch={handleSearch} />
+      )}
       <main className="main-content">
-        {showSavedPosts ? (
-          <Dashboard onBack={() => setShowSavedPosts(false)} />
-        ) : showMyPosts ? (
-          <MyPosts onBack={() => setShowMyPosts(false)} />
-        ) : (
-          <HomeFeed
-            showCreateForm={showCreateForm}
-            onCloseCreateForm={handleCloseCreateForm}
-            searchTerm={searchTerm}
+        <Routes>
+          <Route
+            path="/saved"
+            element={
+              <ProtectedRoute reason="view saved posts">
+                <Dashboard />
+              </ProtectedRoute>
+            }
           />
-        )}
+
+          <Route
+            path="/my-posts"
+            element={
+              <ProtectedRoute reason="view your posts">
+                <MyPosts />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              <HomeFeed
+                showCreateForm={showCreateForm}
+                onCloseCreateForm={handleCloseCreateForm}
+                searchTerm={searchTerm}
+              />
+            }
+          />
+
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
       </main>
     </div>
   );

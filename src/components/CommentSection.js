@@ -107,13 +107,11 @@ function CommentSection({ comments, onAddComment, loading, currentUser }) {
           </div>
         ) : (
           <>
-            {console.log("Rendering comments:", comments)}
             {comments.map((comment) => {
-              console.log("Individual comment:", comment);
               return (
                 <div key={comment.id} className="comment">
                   <div className="comment-header">
-                    <span className="comment-author">{comment.AuthorName}</span>
+                    <span className="comment-author">{comment.authorName}</span>
                     <span className="comment-date">
                       {formatDate(comment.createdAt)}
                     </span>

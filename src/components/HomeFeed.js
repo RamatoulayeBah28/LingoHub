@@ -65,7 +65,7 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
           post.content.toLowerCase().includes(searchLower) ||
           post.authorName.toLowerCase().includes(searchLower) ||
           (post.tags &&
-            post.tags.some((tag) => tag.toLowerCase().includes(searchLower)))
+            post.tags.some((tag) => tag.toLowerCase().includes(searchLower))),
       );
     }
 

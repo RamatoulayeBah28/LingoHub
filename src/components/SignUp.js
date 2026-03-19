@@ -1,8 +1,10 @@
 // SignUp.js
 import { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { trackSignUp } from "../services/analyticsService";
 import "../styles/Auth.css";
 import { FaGoogle } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function SignUp() {
   const emailRef = useRef();
@@ -10,6 +12,8 @@ function SignUp() {
   const { signup, loginWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +27,8 @@ function SignUp() {
       });
 
       await signup(emailRef.current.value, passwordRef.current.value);
-      alert("Signed up successfully!");
+      trackSignUp("email");
+      navigate(location.state?.from || "/");
     } catch (error) {
       console.error("Signup error:", error);
       console.error("Error code:", error.code);
@@ -67,7 +72,8 @@ function SignUp() {
       setError("");
       setLoading(true);
       await loginWithGoogle();
-      alert("Signed in with Google successfully!");
+      trackSignUp("google");
+      navigate(location.state?.from || "/");
     } catch (error) {
       console.error("Google sign-in error:", error);
 

@@ -10,8 +10,9 @@ import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
 import PostForm from "./PostForm";
 import "../styles/MyPosts.css";
+import { useNavigate } from "react-router-dom";
 
-function MyPosts({ onBack }) {
+function MyPosts() {
   const { currentUser } = useAuth();
   const [myPosts, setMyPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ function MyPosts({ onBack }) {
   const [showPostDetail, setShowPostDetail] = useState(false);
   const [editingPost, setEditingPost] = useState(null);
   const [showEditForm, setShowEditForm] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadMyPosts = async () => {
@@ -71,7 +73,7 @@ function MyPosts({ onBack }) {
 
   const handleDeletePost = async (postId) => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post? This action cannot be undone."
+      "Are you sure you want to delete this post? This action cannot be undone.",
     );
 
     if (confirmDelete) {
@@ -122,7 +124,7 @@ function MyPosts({ onBack }) {
   return (
     <div className="my-posts">
       <div className="my-posts-header">
-        <button className="back-button" onClick={onBack}>
+        <button className="back-button" onClick={() => navigate("/")}>
           ← Back to Feed
         </button>
         <h1>My Posts</h1>

@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Auth.css";
 import { FaGoogle } from "react-icons/fa";
+import { trackLogin } from "../services/analyticsService";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
   const emailRef = useRef();
@@ -10,6 +12,8 @@ function Login() {
   const { login, loginWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +22,8 @@ function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      alert("Logged in successfully!");
+      trackLogin("email");
+      navigate(location.state?.from || "/");
     } catch (error) {
       console.error("Login error:", error);
 
@@ -58,7 +63,8 @@ function Login() {
       setError("");
       setLoading(true);
       await loginWithGoogle();
-      alert("Signed in with Google successfully!");
+      trackLogin("google");
+      navigate(location.state?.from || "/");
     } catch (error) {
       console.error("Google sign-in error:", error);
 

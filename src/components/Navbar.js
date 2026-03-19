@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Navbar.css";
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
+function Navbar({ onCreatePost, onSearch }) {
   const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleLogout = async () => {
@@ -56,13 +58,13 @@ function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
               </button>
               <button
                 className="nav-button my-posts-btn"
-                onClick={onShowMyPosts}
+                onClick={() => navigate("/my-posts")}
               >
                 My Posts
               </button>
               <button
                 className="nav-button saved-posts-btn"
-                onClick={onShowSavedPosts}
+                onClick={() => navigate("/saved")}
               >
                 Saved Posts
               </button>
@@ -71,7 +73,20 @@ function Navbar({ onCreatePost, onShowSavedPosts, onShowMyPosts, onSearch }) {
               </button>
             </>
           ) : (
-            <span className="login-prompt">Please log in to create posts</span>
+            <>
+              <button
+                className="nav-button login-btn"
+                onClick={() => navigate("/auth")}
+              >
+                Log In
+              </button>
+              <button
+                className="nav-button signup-btn"
+                onClick={() => navigate("/auth")}
+              >
+                Sign Up
+              </button>
+            </>
           )}
         </div>
       </div>

@@ -22,6 +22,11 @@ import "../styles/PostDetail.css";
 import { IoMdHeart } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { AiTwotoneLike } from "react-icons/ai";
+import {
+  trackPostViewed,
+  trackUpvote,
+  trackCommentAdded,
+} from "../services/analyticsService";
 
 function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
   const { currentUser } = useAuth();
@@ -42,6 +47,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
       try {
         const commentsData = await getCommentsForPost(post.id);
         setComments(commentsData);
+        trackPostViewed(post.id);
       } catch (error) {
         console.error("Error loading comments:", error);
       } finally {
@@ -54,7 +60,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
         try {
           const upvotedStatus = await hasUserUpvotedPost(
             post.id,
-            currentUser.uid
+            currentUser.uid,
           );
           setHasUpvoted(upvotedStatus);
 
@@ -95,11 +101,12 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
       const commentId = await addCommentToPost(
         post.id,
         commentContent,
-        isAnonymous
+        isAnonymous,
       );
       if (commentId) {
         // Reload comments to show the new one
         await reloadComments();
+        trackCommentAdded(post.id);
         return true;
       }
       return false;
@@ -115,7 +122,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
       return;
     }
 
-    // Optimistic update - update UI immediately
+    // update UI immediately
     const wasUpvoted = hasUpvoted;
     const originalCount = upvoteCount;
     const newUpvoteCount = wasUpvoted
@@ -125,6 +132,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
     setHasUpvoted(!wasUpvoted);
     setUpvoteCount(newUpvoteCount);
     setUpvoteLoading(true);
+    trackUpvote(post.id);
 
     try {
       if (wasUpvoted) {

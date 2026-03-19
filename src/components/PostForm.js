@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { createNewPost, updatePost } from "../services/postService";
 import "../styles/PostForm.css";
+import { trackPostCreated } from "../services/analyticsService";
 
 function PostForm({
   onClose,
@@ -82,9 +83,10 @@ function PostForm({
 
     e.preventDefault();
 
+    // User validation for later implementation of non-authenticated browsing
     if (!currentUser) {
       setError(
-        `You must be logged in to ${isEditing ? "edit" : "create"} a post`
+        `You must be logged in to ${isEditing ? "edit" : "create"} a post`,
       );
       return;
     }
@@ -116,7 +118,7 @@ function PostForm({
           formData.content.trim(),
           formData.imageUrl.trim(),
           tags,
-          isAnonymous
+          isAnonymous,
         );
         success = !!postId;
       }
@@ -141,20 +143,21 @@ function PostForm({
         if (onClose) {
           onClose();
         }
+        trackPostCreated({ isAnonymous, tagCount: tags.length });
       } else {
         setError(
-          `Failed to ${isEditing ? "update" : "create"} post. Please try again.`
+          `Failed to ${isEditing ? "update" : "create"} post. Please try again.`,
         );
       }
     } catch (error) {
       console.error(
         `Error ${isEditing ? "updating" : "creating"} post:`,
-        error
+        error,
       );
       setError(
         `An error occurred while ${
           isEditing ? "updating" : "creating"
-        } the post`
+        } the post`,
       );
     } finally {
       setIsLoading(false);
@@ -290,8 +293,8 @@ function PostForm({
                   ? "Updating..."
                   : "Creating..."
                 : isEditing
-                ? "Update Post"
-                : "Create Post"}
+                  ? "Update Post"
+                  : "Create Post"}
             </button>
           </div>
         </form>
