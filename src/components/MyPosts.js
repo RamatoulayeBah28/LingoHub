@@ -28,8 +28,8 @@ function MyPosts() {
 
       setLoading(true);
       try {
-        console.log("Loading posts for user ID:", currentUser.uid);
-        const posts = await getPostsByAuthor(currentUser.uid);
+        console.log("Loading posts for user ID:", currentUser.id);
+        const posts = await getPostsByAuthor(currentUser.id);
         console.log("Loaded posts:", posts);
         setMyPosts(posts);
       } catch (error) {
@@ -47,7 +47,7 @@ function MyPosts() {
 
     setLoading(true);
     try {
-      const posts = await getPostsByAuthor(currentUser.uid);
+      const posts = await getPostsByAuthor(currentUser.id);
       setMyPosts(posts);
     } catch (error) {
       console.error("Error loading my posts:", error);

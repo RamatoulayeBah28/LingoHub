@@ -41,7 +41,7 @@ function PostCard({
     const checkSavedStatus = async () => {
       if (currentUser && post?.id && !isInSavedPosts) {
         try {
-          const savedStatus = await isPostSavedByUser(post.id, currentUser.uid);
+          const savedStatus = await isPostSavedByUser(post.id, currentUser.id);
           setIsSaved(savedStatus);
         } catch (error) {
           console.error("Error checking saved status:", error);
@@ -54,7 +54,7 @@ function PostCard({
         try {
           const upvotedStatus = await hasUserUpvotedPost(
             post.id,
-            currentUser.uid
+            currentUser.id
           );
           setHasUpvoted(upvotedStatus);
 

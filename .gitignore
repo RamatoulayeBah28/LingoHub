@@ -28,3 +28,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+lingohub-migration/serviceAccount.json
+lingohub-migration/.env

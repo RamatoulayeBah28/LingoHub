@@ -60,7 +60,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
         try {
           const upvotedStatus = await hasUserUpvotedPost(
             post.id,
-            currentUser.uid,
+            currentUser.id,
           );
           setHasUpvoted(upvotedStatus);
 

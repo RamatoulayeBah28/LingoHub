@@ -22,7 +22,7 @@ function Dashboard() {
     const loadSavedPosts = async () => {
       setLoading(true);
       try {
-        const savedPostsData = await getUserSavedPosts(currentUser.uid);
+        const savedPostsData = await getUserSavedPosts(currentUser.id);
 
         // For each saved post, fetch the full post data
         const fullPostsData = await Promise.all(
@@ -52,7 +52,7 @@ function Dashboard() {
   const refreshSavedPosts = async () => {
     setLoading(true);
     try {
-      const savedPostsData = await getUserSavedPosts(currentUser.uid);
+      const savedPostsData = await getUserSavedPosts(currentUser.id);
 
       // For each saved post, fetch the full post data
       const fullPostsData = await Promise.all(

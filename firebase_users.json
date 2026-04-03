@@ -1,0 +1,527 @@
+{"users": [
+{
+  "localId": "0IEXDIrJq8ZG2eREKXPWtTPV19x2",
+  "email": "drmgomy@gmail.com",
+  "emailVerified": true,
+  "displayName": "Gomy Manguluti",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJv1hiGQh3-CKWO6h5-S3Jk39eLmznEw9xTJGleDQoWfA6onA=s96-c",
+  "lastSignedInAt": "1754437008618",
+  "createdAt": "1754437008618",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "118250750120569574558",
+      "email": "drmgomy@gmail.com",
+      "displayName": "Gomy Manguluti",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJv1hiGQh3-CKWO6h5-S3Jk39eLmznEw9xTJGleDQoWfA6onA=s96-c"
+    }
+  ]
+},
+{
+  "localId": "1cIJrWpakoPXxPIVH5KWZRyWHcB3",
+  "email": "berryareen@gmail.com",
+  "emailVerified": true,
+  "displayName": "Ari Berry",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIQ8w0pLSgS96ybj4CUavDm8pDopOEmvw4iGJAHu8rNKAC_2Q=s96-c",
+  "lastSignedInAt": "1754451651509",
+  "createdAt": "1754451651508",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "102453278657167752113",
+      "email": "berryareen@gmail.com",
+      "displayName": "Ari Berry",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIQ8w0pLSgS96ybj4CUavDm8pDopOEmvw4iGJAHu8rNKAC_2Q=s96-c"
+    }
+  ]
+},
+{
+  "localId": "3vyGSrPh5vfNcvzmxtL2OSDM08k1",
+  "email": "yaithmad@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Youssef Aithmad",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI2Tfhhs5mCYL0ICDTTnhiLC815o2T8bVxGg_VPFyo_umd2dg=s96-c",
+  "lastSignedInAt": "1754434781832",
+  "createdAt": "1754434781832",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "109462393805904888641",
+      "email": "yaithmad@macalester.edu",
+      "displayName": "Youssef Aithmad",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI2Tfhhs5mCYL0ICDTTnhiLC815o2T8bVxGg_VPFyo_umd2dg=s96-c"
+    }
+  ]
+},
+{
+  "localId": "8gKFvycu8GV22jjSY9MbV8kj4eM2",
+  "email": "ansh06tomar@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "TvPw3mR1rd5Tdvxe/v857KCAR+HV4VtKAm0C0PVH/wwKFZgiLFHidpyhj6v3MEMaALlI9cvJ0PbnQxy4u5pfLA==",
+  "salt": "3lR6yM02Ntw+Rg==",
+  "lastSignedInAt": "1754523621849",
+  "createdAt": "1754523621849",
+  "providerUserInfo": []
+},
+{
+  "localId": "9Vm4CGMWdYgjVPnwi1tF4Mb9Idi2",
+  "email": "olivialien@icloud.com",
+  "emailVerified": false,
+  "passwordHash": "jipm8GaK4+aptk+9r/pixDxaIp4+j3pTuwy56CLWXj9Eko2kDQxKFj5sx+t7pGCo8H1TVsX7VuiuxPGMfLq7kw==",
+  "salt": "tblSdKpRwZta8w==",
+  "lastSignedInAt": "1754433891055",
+  "createdAt": "1754433891055",
+  "providerUserInfo": []
+},
+{
+  "localId": "AYvtgUgivIef01XQmMDobL6P2eC3",
+  "email": "liezomie@gmail.com",
+  "emailVerified": true,
+  "displayName": "Bah Fatmata Binta",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJIMb6CAV9iKMrN9Fw8xqF1vfFOxLs189kBwRhmCN-LLyR83Q=s96-c",
+  "lastSignedInAt": "1765390682213",
+  "createdAt": "1765388624266",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "116753951927860987533",
+      "email": "liezomie@gmail.com",
+      "displayName": "Bah Fatmata Binta",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJIMb6CAV9iKMrN9Fw8xqF1vfFOxLs189kBwRhmCN-LLyR83Q=s96-c"
+    }
+  ]
+},
+{
+  "localId": "DBxcv57pJkPafJekifndlXULlGR2",
+  "email": "mlozano@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Matías David Lozano",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJaBGlwoIAQhGg-AZ7Lgy2iqkomWJfk6vwFhjiMQKSRAe8ShaEt=s96-c",
+  "lastSignedInAt": "1754441323525",
+  "createdAt": "1754441323525",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "115271477721773676959",
+      "email": "mlozano@macalester.edu",
+      "displayName": "Matías David Lozano",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJaBGlwoIAQhGg-AZ7Lgy2iqkomWJfk6vwFhjiMQKSRAe8ShaEt=s96-c"
+    }
+  ]
+},
+{
+  "localId": "EkdVwbJ70aMGACs0ZzOr25kMPRF2",
+  "email": "nourelshabasy1@gmail.com",
+  "emailVerified": true,
+  "displayName": "Nour Elshabasy",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIs9upUnjmJ-0_zVVb77JqUsAf4Z3y9D6wBwTFrQhCMeMad_1E=s96-c",
+  "lastSignedInAt": "1754527791224",
+  "createdAt": "1754527791223",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "110097061738548978977",
+      "email": "nourelshabasy1@gmail.com",
+      "displayName": "Nour Elshabasy",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIs9upUnjmJ-0_zVVb77JqUsAf4Z3y9D6wBwTFrQhCMeMad_1E=s96-c"
+    }
+  ]
+},
+{
+  "localId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+  "email": "alexandriamccoles@gmail.com",
+  "emailVerified": true,
+  "displayName": "Alexandria McColes",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJEruLQ4zvz0at8Wel1lLpqm3Ir7MSZO6tZTg6jvUT12smH8Q=s96-c",
+  "lastSignedInAt": "1765395614827",
+  "createdAt": "1765395614826",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "114967120165253668338",
+      "email": "alexandriamccoles@gmail.com",
+      "displayName": "Alexandria McColes",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJEruLQ4zvz0at8Wel1lLpqm3Ir7MSZO6tZTg6jvUT12smH8Q=s96-c"
+    }
+  ]
+},
+{
+  "localId": "HOsmdbV0Tab5FlPNhiBY2J6yfay2",
+  "email": "bazelais.rachel@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "Sd/MbyhNAEBhb+orRoDJRQ4mFa6x9m7BH4Y3LpIXJw0lkeBsypAIajxjLe1j7oOoXkEpFwCtb2smTrKzL9jBUQ==",
+  "salt": "C4gm/GEOsaZGiA==",
+  "lastSignedInAt": "1754527557782",
+  "createdAt": "1754527557782",
+  "providerUserInfo": []
+},
+{
+  "localId": "IxkDQGiJfnhTjtUQT056TvkItfB3",
+  "email": "noellegarrick@gmail.com",
+  "emailVerified": true,
+  "displayName": "Noelle Garrick",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJsG_YsdrRxTyEy1owvCmtg7ofNB7G0ThnZLA6wDH5TKRnmnM0w=s96-c",
+  "lastSignedInAt": "1754523623877",
+  "createdAt": "1754523623877",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "114433178153501269968",
+      "email": "noellegarrick@gmail.com",
+      "displayName": "Noelle Garrick",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJsG_YsdrRxTyEy1owvCmtg7ofNB7G0ThnZLA6wDH5TKRnmnM0w=s96-c"
+    }
+  ]
+},
+{
+  "localId": "KAaeUtk03Qa9lV60Ym4N4FxMOLF3",
+  "email": "rmamaneb@macalester.edu",
+  "emailVerified": false,
+  "passwordHash": "3/ECtZsP4eEiDLSJ4U/HeLd90wLDYL0yxah+hbx+um3li4Krqq5eMl3Qu3/y0N4Or/JqOh9nq964k5ypf1DnRw==",
+  "salt": "3RgWoxBCu5rj+w==",
+  "lastSignedInAt": "1754430968873",
+  "createdAt": "1754430968873",
+  "providerUserInfo": []
+},
+{
+  "localId": "KPiwbBVM7GerlT1lHtKXcsvOpA32",
+  "email": "xanderlytle@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "iSSlfiMj1bNb5fgPqaQzJ07LFjdeOBo3jyjQ/tsD3Fl/KzPYoxcgsczbiBZIVsesomXBuTCKd/GIDOT75dvdSA==",
+  "salt": "xeBnD6amKii6Fw==",
+  "lastSignedInAt": "1754437794961",
+  "createdAt": "1754437794961",
+  "providerUserInfo": []
+},
+{
+  "localId": "MjH2e2UGbgR00I5Xeonj4QfnQsA3",
+  "email": "eborgehammar@gmail.com",
+  "emailVerified": true,
+  "displayName": "Erik Borgehammar",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJ3EzHR17J1iKFRVLzzXrWE82dm_ZiEVUxrNviDE_HcWa_mPQ=s96-c",
+  "lastSignedInAt": "1754438057063",
+  "createdAt": "1754438057062",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "106304988426457651942",
+      "email": "eborgehammar@gmail.com",
+      "displayName": "Erik Borgehammar",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJ3EzHR17J1iKFRVLzzXrWE82dm_ZiEVUxrNviDE_HcWa_mPQ=s96-c"
+    }
+  ]
+},
+{
+  "localId": "QIT9HXmmoUSm5PIATwuu6dmEs693",
+  "email": "mariyamtunkara456@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "n4/YiIL0iZPG8JhAOnUcmLg6VoOFR2r9IdG0OkHU0/6svXM9q4MDvewYDEaQFKrSWbM5cqZh+5wz2hVMnjc7rA==",
+  "salt": "4Y0wY5Hhjm9N8g==",
+  "lastSignedInAt": "1754523624123",
+  "createdAt": "1754523624123",
+  "providerUserInfo": []
+},
+{
+  "localId": "USWkBfypYTQIcoV001YVGFhX6qR2",
+  "email": "apple3.pie33@gmail.com",
+  "emailVerified": true,
+  "displayName": "apple pie",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK-BPpHSK28pqXSmNpGh2V9xNbdhXTtLakht6Akfbg2TjB40Q=s96-c",
+  "lastSignedInAt": "1754527750013",
+  "createdAt": "1754527750013",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "112566767357717935843",
+      "email": "apple3.pie33@gmail.com",
+      "displayName": "apple pie",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK-BPpHSK28pqXSmNpGh2V9xNbdhXTtLakht6Akfbg2TjB40Q=s96-c"
+    }
+  ]
+},
+{
+  "localId": "V9wOU03q09WHBDR0yta0E5ECZ2y2",
+  "email": "lcho@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Luukas Cho",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKCebIutETIRsKKZnA87Zrz4jY7gr6DQrEZlp1jVcrGsE55Xw=s96-c",
+  "lastSignedInAt": "1754435505023",
+  "createdAt": "1754435505022",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "108983116834272303303",
+      "email": "lcho@macalester.edu",
+      "displayName": "Luukas Cho",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKCebIutETIRsKKZnA87Zrz4jY7gr6DQrEZlp1jVcrGsE55Xw=s96-c"
+    }
+  ]
+},
+{
+  "localId": "WdoNWOu5qdftSDrLh4OEZuDd46n2",
+  "email": "hmdonaldson5@gmail.com",
+  "emailVerified": true,
+  "displayName": "Helena Donaldson",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLO1kSk0nXeHVA18dfZCPAreu1qGNPocVawSrVdJtjkejTGYg=s96-c",
+  "lastSignedInAt": "1754527558671",
+  "createdAt": "1754527558671",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "108622264704263453905",
+      "email": "hmdonaldson5@gmail.com",
+      "displayName": "Helena Donaldson",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLO1kSk0nXeHVA18dfZCPAreu1qGNPocVawSrVdJtjkejTGYg=s96-c"
+    }
+  ]
+},
+{
+  "localId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+  "email": "ramizo92390@gmail.com",
+  "emailVerified": true,
+  "displayName": "Ramatoulaye Bah",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKtHdltCIj9orQFC2NYPy-XyF6bzybwYU9UVHiHLeEAK9G4FGk=s96-c",
+  "lastSignedInAt": "1773929806374",
+  "createdAt": "1754346096332",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "114996584925723312397",
+      "email": "ramizo92390@gmail.com",
+      "displayName": "Ramatoulaye Bah",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKtHdltCIj9orQFC2NYPy-XyF6bzybwYU9UVHiHLeEAK9G4FGk=s96-c"
+    }
+  ]
+},
+{
+  "localId": "Z8jppeX8QRhrjQZFhxe07zwla5S2",
+  "email": "rbah@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Ramatoulaye Bah",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKFiz4vNNYN8oS88gNi1x5ZdsEAQEllKqtayEznnd4Nb3jthw=s96-c",
+  "lastSignedInAt": "1765392430400",
+  "createdAt": "1754429557462",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "116991614802491886777",
+      "email": "rbah@macalester.edu",
+      "displayName": "Ramatoulaye Bah",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKFiz4vNNYN8oS88gNi1x5ZdsEAQEllKqtayEznnd4Nb3jthw=s96-c"
+    }
+  ]
+},
+{
+  "localId": "dg5GHz9xh5WHiUxOEu2RfV4KVYy1",
+  "email": "bkell@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Blake Kell",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIHZnT94cJrq4Rdf7MU1mMlOdILxBP8KNnje2ZTZxC4b7Ec0Q=s96-c",
+  "lastSignedInAt": "1754479716793",
+  "createdAt": "1754479716793",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "105567107709354312999",
+      "email": "bkell@macalester.edu",
+      "displayName": "Blake Kell",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIHZnT94cJrq4Rdf7MU1mMlOdILxBP8KNnje2ZTZxC4b7Ec0Q=s96-c"
+    }
+  ]
+},
+{
+  "localId": "flcqABe3jlR11MFkW0eROcDW9em2",
+  "email": "arham1011cx@gmail.com",
+  "emailVerified": true,
+  "displayName": "armam ahmed",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIh29gONB53qZYtXgEPmPS4alDoiOnT5Pyv3vtrH6eHS23YHA=s96-c",
+  "lastSignedInAt": "1754523615804",
+  "createdAt": "1754523615804",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "109150624759424028687",
+      "email": "arham1011cx@gmail.com",
+      "displayName": "armam ahmed",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIh29gONB53qZYtXgEPmPS4alDoiOnT5Pyv3vtrH6eHS23YHA=s96-c"
+    }
+  ]
+},
+{
+  "localId": "hUzBqy3Ri7YSbbherJcmj3wW5xV2",
+  "email": "wacostal@macalester.edu",
+  "emailVerified": false,
+  "passwordHash": "Vy7LAp5UUEOy6JOGJkmks4YO0DZQWTRdjoDUZrLPX/X4SOymsi9EmoUFjhPd3HyWQihCVgd0CxP2f7Fr6jzAZA==",
+  "salt": "l16ZBPkqKBUdWw==",
+  "lastSignedInAt": "1754438414847",
+  "createdAt": "1754438414847",
+  "providerUserInfo": []
+},
+{
+  "localId": "jKe93Z0Al0N5MV3ng93OU3BIswY2",
+  "email": "shubbyv@gmail.com",
+  "emailVerified": true,
+  "displayName": "Shubhi V",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK6aPTta4Z8vulPgLWCSe40koL2WL8e_RxrY9zX6o1Y2N44clHEug=s96-c",
+  "lastSignedInAt": "1754540542811",
+  "createdAt": "1754540542811",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "115868377709782645426",
+      "email": "shubbyv@gmail.com",
+      "displayName": "Shubhi V",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK6aPTta4Z8vulPgLWCSe40koL2WL8e_RxrY9zX6o1Y2N44clHEug=s96-c"
+    }
+  ]
+},
+{
+  "localId": "kXH2su1ptxgli7q3UNVFnVK458u2",
+  "email": "ramatoulaye.bah2805@gmail.com",
+  "emailVerified": true,
+  "displayName": "Ramatoulaye Bah",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI0eh2fB3yOrLM7aHzon-q3a4SWiQd3aV-ynBWN0fRy2X-uSA=s96-c",
+  "lastSignedInAt": "1765350270649",
+  "createdAt": "1754428672172",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "103007891251438236608",
+      "email": "ramatoulaye.bah2805@gmail.com",
+      "displayName": "Ramatoulaye Bah",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI0eh2fB3yOrLM7aHzon-q3a4SWiQd3aV-ynBWN0fRy2X-uSA=s96-c"
+    }
+  ]
+},
+{
+  "localId": "kuJRxfvydRPhCiRCtD1VL3BQTmF2",
+  "email": "stuff@stuff.com",
+  "emailVerified": false,
+  "passwordHash": "JHjqG4Izy23VMUVIgqzKIvBNv7VCWMLbwdyrYhMzuUrVs7b35nYHNfkn3uaIdedDP6sudVDTFD4zqWqM5GGMww==",
+  "salt": "SVJe2yjQ5/5Oxg==",
+  "lastSignedInAt": "1754527587560",
+  "createdAt": "1754527587560",
+  "providerUserInfo": []
+},
+{
+  "localId": "pDEeBDyAKkNpyYccvtFsT1f1v4D2",
+  "email": "dysonhaaland@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "+xRHKw2dHGRZRnGxqqBosbnocZfgwuufc8Mo1cTWB1d8ifQKW0LOAZbc01aJ6sn7C1KvONxVJfkLePkdnhXN6w==",
+  "salt": "sRanTcAgDpr5hg==",
+  "lastSignedInAt": "1754456016910",
+  "createdAt": "1754456016910",
+  "providerUserInfo": []
+},
+{
+  "localId": "pgyghY7UIYf8oUfAzNW5YRDWH2L2",
+  "email": "andresgv649@gmail.com",
+  "emailVerified": true,
+  "displayName": "Andres",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJUncZwZGgaa-5rMscsbFRibYajQKi9xli-r6Zu1lD3wo6zvQ=s96-c",
+  "lastSignedInAt": "1754523684626",
+  "createdAt": "1754523684626",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "108663151431087874963",
+      "email": "andresgv649@gmail.com",
+      "displayName": "Andres",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJUncZwZGgaa-5rMscsbFRibYajQKi9xli-r6Zu1lD3wo6zvQ=s96-c"
+    }
+  ]
+},
+{
+  "localId": "pkSh1xaspVdZQ0pBhivrcMXiGRe2",
+  "email": "undertryname@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "tMxVMSMzPfQTQj0MTbJbqtzwWRqIM8iKb1KrGONF98Zpaf6i7O/Yy61YVbmIKVaH4ackSO5RSCGKNprfWWIzTw==",
+  "salt": "VefHYjSMrIfszw==",
+  "lastSignedInAt": "1754523656965",
+  "createdAt": "1754523656965",
+  "providerUserInfo": []
+},
+{
+  "localId": "s85AUPuiOnbfh8cjwQvYyIlKmsV2",
+  "email": "fidelibeabuchi.soluchi@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "YwNIyJf4f0aOMJJrskSkjj40UVkfgwQlLhTimxeqI2T10WWPxWj8qeCKlhNks5mgmYp3ONjiIKeVC9jwIfY9PQ==",
+  "salt": "v5+lepl5ZR+Bfg==",
+  "lastSignedInAt": "1754527637438",
+  "createdAt": "1754527637438",
+  "providerUserInfo": []
+},
+{
+  "localId": "u0Poq2msh0YNLlHCcLfz31VPktu1",
+  "email": "amiron@macalester.edu",
+  "emailVerified": true,
+  "displayName": "Adelaide Miron",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLHWt18bYqZekFB_rq48ptw8HzeN8SyXAvXkaKWQNPt_F9MZ7OL=s96-c",
+  "lastSignedInAt": "1765392436865",
+  "createdAt": "1765392436865",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "112964014186105686119",
+      "email": "amiron@macalester.edu",
+      "displayName": "Adelaide Miron",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLHWt18bYqZekFB_rq48ptw8HzeN8SyXAvXkaKWQNPt_F9MZ7OL=s96-c"
+    }
+  ]
+},
+{
+  "localId": "vqSWGF9ZHAdVMQ9vm6KBFO66OUx1",
+  "email": "rachaelakwa3012@gmail.com",
+  "emailVerified": true,
+  "displayName": "Rachael Akwa",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI6XC9Iy5ImS5-SbynTVmr2YyChHGMcmfqrlxdc8uwCknMqMg=s96-c",
+  "lastSignedInAt": "1754523648709",
+  "createdAt": "1754523648709",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "110378988793195818203",
+      "email": "rachaelakwa3012@gmail.com",
+      "displayName": "Rachael Akwa",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocI6XC9Iy5ImS5-SbynTVmr2YyChHGMcmfqrlxdc8uwCknMqMg=s96-c"
+    }
+  ]
+},
+{
+  "localId": "w8R5f8WS48N73Q9kj63GFDu6FZG3",
+  "email": "josephinerakow@gmail.com",
+  "emailVerified": true,
+  "displayName": "Josephine",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJIYuRPxPyui5Hm-yhs0RKj0eLz1mIyc8IzxjWx-Gnqt2tyog=s96-c",
+  "lastSignedInAt": "1754527565910",
+  "createdAt": "1754527565909",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "103222295421541222755",
+      "email": "josephinerakow@gmail.com",
+      "displayName": "Josephine",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJIYuRPxPyui5Hm-yhs0RKj0eLz1mIyc8IzxjWx-Gnqt2tyog=s96-c"
+    }
+  ]
+},
+{
+  "localId": "wLWgqci5ADMETLe3nzbmGcUyHO73",
+  "email": "emathews@macalester.edu",
+  "emailVerified": false,
+  "passwordHash": "f/kQ8uCko29X4pOIxL0JWrlA3szghf0tTOhD6FfaPNROlw32rAV+28HAKWVLQDbx+kTVbvid89WHaAfiK6yXbg==",
+  "salt": "pI4PkWaDq217/g==",
+  "lastSignedInAt": "1765392625016",
+  "createdAt": "1765392625016",
+  "providerUserInfo": []
+},
+{
+  "localId": "zamKThDIFqW86WMjNeKURy7vata2",
+  "email": "bruno.guiduli@gmail.com",
+  "emailVerified": false,
+  "passwordHash": "EWR/INVDck1WTZW+z7GTXkelsTvzbZ8RVLRWYhGEj2duw/vGcLdA1tvbmenVvQWk7fipcFEdDWv/Zlo/6islqQ==",
+  "salt": "qWaf+DrsXKNYGg==",
+  "lastSignedInAt": "1754432897546",
+  "createdAt": "1754432034148",
+  "providerUserInfo": []
+}]}

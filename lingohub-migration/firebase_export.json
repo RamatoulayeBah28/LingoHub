@@ -1,0 +1,607 @@
+{
+  "posts": [
+    {
+      "id": "8yv5cvOCcn3WFnsLtgqi",
+      "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "authorName": "Ramatoulaye Bah",
+      "title": "Mi palabra favorita en español",
+      "content": "Solamente quería compartir mi palabra favorita en español: playa! No sé porque pero me gusta. Cual es tu palabra favorita en otro idioma?",
+      "imageUrl": "https://wallpapers.com/images/hd/beach-sunset-hd-pbw8evzrrekzddkt.jpg",
+      "isAnonymous": false,
+      "tags": [
+        "spanish",
+        "fav"
+      ],
+      "upvotes": 1,
+      "createdAt": "2025-08-05T21:03:55.576Z",
+      "updatedAt": "2025-12-10T16:54:49.421Z",
+      "_upvotes": [
+        {
+          "userId": "KAaeUtk03Qa9lV60Ym4N4FxMOLF3",
+          "upvotedAt": "2025-08-05T21:58:25.018Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "hMDELQU9XGIlCir8ioZJ",
+          "authorName": "Anonymous",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "Solo un detalle: en preguntas se escribe \"por qué\" (con espacio y tilde). ¡Todo lo demás está genial! 😊 Mi palabra favorita en español es “ojalá”.",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-05T21:25:43.611Z"
+        }
+      ]
+    },
+    {
+      "id": "A3z3VnOCEA0lRmWuVBUl",
+      "authorId": "pDEeBDyAKkNpyYccvtFsT1f1v4D2",
+      "authorName": "Anonymous",
+      "title": "What’s the best way to learn French as a young adult",
+      "content": "I’ve heard of watching movies/shows in French to get used to the language but what can I do to help my speaking and writing?",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [
+        "french"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-08-06T04:55:36.657Z",
+      "updatedAt": "2025-08-06T04:55:36.657Z",
+      "_upvotes": [],
+      "_comments": [
+        {
+          "id": "u5GIazd0DZM5pndjocFI",
+          "authorName": "Anonymous",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "Interacting with native speakers!",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-06T23:41:35.927Z"
+        }
+      ]
+    },
+    {
+      "id": "K0XwXE750cTHY40oic0c",
+      "authorId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+      "authorName": "Alexandria McColes",
+      "title": "Chinese/English Speaking friends!",
+      "content": "大家好，我又开始学习中文了！我需要和母语人士或中文流利的人练习口语和发音。我会说英语，如果需要的话，我也乐意提供帮助！我想聊一些日常话题，也想深入探讨一些更复杂的话题，比如新闻或者我的专业——计算机科学。如果有人感兴趣，请联系我！:)\nHi, I am studying the Chinese language again! I need to practice my speaking and pronunciation skills with a native or fluent speaker. I speak English and can also provide assistance if needed! I want to speak about everyday things, but also more in depth topics like the news or my major in computer science. If anyone is interested please let me know! :)",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [
+        "speaking",
+        "friends"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-12-10T19:45:32.165Z",
+      "updatedAt": "2025-12-10T19:45:32.165Z",
+      "_upvotes": [],
+      "_comments": []
+    },
+    {
+      "id": "KA8csKy2PG879JCKf3ln",
+      "authorId": "hUzBqy3Ri7YSbbherJcmj3wW5xV2",
+      "authorName": "Anonymous",
+      "title": "Ladino days of the week",
+      "content": "Did you know that in ladino the days of the week are very similar to Castilian Spanish? They are the following: Lunes, Martes, Mierkoles, Jueves, Viernes, Shabat, Alhad. Ladino is an endangered language in Europe, Maghreb, the Levant, and the Americas. Make sure to learn more about endangered languages!",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [
+        "endangered language"
+      ],
+      "upvotes": 2,
+      "createdAt": "2025-08-06T00:03:28.494Z",
+      "updatedAt": "2025-08-06T00:03:28.494Z",
+      "_upvotes": [
+        {
+          "userId": "DBxcv57pJkPafJekifndlXULlGR2",
+          "upvotedAt": "2025-08-06T00:50:07.873Z"
+        },
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T01:59:38.058Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "ME0Hmi0UFzcVmMBZoQH5",
+      "authorId": "s85AUPuiOnbfh8cjwQvYyIlKmsV2",
+      "authorName": "Anonymous",
+      "title": "This is so cool :)",
+      "content": "I think this will be helpful for a lot of people hehe\n\n~codepath friend",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 0,
+      "createdAt": "2025-08-07T00:48:31.452Z",
+      "updatedAt": "2025-08-07T00:48:31.452Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:09.065Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "Nqyg5RhbuaaW9EHWvL42",
+      "authorId": "QIT9HXmmoUSm5PIATwuu6dmEs693",
+      "authorName": "Anonymous",
+      "title": "Ana Kamogo",
+      "content": "Hii, Im mariyam, i speak Soninke, which is not a written language but its pretty cool",
+      "imageUrl": "data:image/jpeg;base64,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",
+      "isAnonymous": false,
+      "tags": [
+        "soninke"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-08-06T23:42:07.666Z",
+      "updatedAt": "2025-08-06T23:42:07.666Z",
+      "_upvotes": [],
+      "_comments": []
+    },
+    {
+      "id": "OGIs5wiVbxjPDVjB6Xdt",
+      "authorId": "9Vm4CGMWdYgjVPnwi1tF4Mb9Idi2",
+      "authorName": "Anonymous",
+      "title": "Duality",
+      "content": "My Linguistics professor often says that Linguistics is the most scientific of the humanities and the most humanistic of the sciences! I’ve found that to be more and more true with every class I’ve taken.",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 1,
+      "createdAt": "2025-08-05T23:01:48.814Z",
+      "updatedAt": "2025-08-05T23:01:48.814Z",
+      "_upvotes": [
+        {
+          "userId": "KPiwbBVM7GerlT1lHtKXcsvOpA32",
+          "upvotedAt": "2025-08-05T23:53:31.540Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "OmVltlu4XyB7qsjVYPQ4",
+      "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "authorName": "Ramatoulaye Bah",
+      "title": "Linguistics Vocab",
+      "content": "When I learned the difference between linguistic prescriptivism vs descriptivism, it honestly changed the way I approach language learning.\n\nPrescriptivism is all about how language should be used (think grammar rules from textbooks), while descriptivism looks at how language is actually used by native speakers in real life. Once I realized this, I stopped stressing about sounding “correct” and started focusing on sounding natural.\n\nLet’s normalize learning to speak like native speakers, with all the slang, filler words, contractions, and quirks instead of sticking to rigid, overly formal textbook grammar. It makes conversations so much more fluid, confident, and real!",
+      "imageUrl": "https://media.istockphoto.com/id/492418894/vector/fun-sign.jpg?s=612x612&w=0&k=20&c=hPUa8EdrNAyf2UuPWAIMFZYFsIGKxTX0kyPhPwZBu48=",
+      "isAnonymous": false,
+      "tags": [
+        "linguistic"
+      ],
+      "upvotes": 5,
+      "createdAt": "2025-08-05T20:24:31.135Z",
+      "updatedAt": "2025-08-07T00:47:17.668Z",
+      "_upvotes": [
+        {
+          "userId": "9Vm4CGMWdYgjVPnwi1tF4Mb9Idi2",
+          "upvotedAt": "2025-08-05T22:45:16.454Z"
+        },
+        {
+          "userId": "IxkDQGiJfnhTjtUQT056TvkItfB3",
+          "upvotedAt": "2025-08-06T23:41:03.532Z"
+        },
+        {
+          "userId": "KAaeUtk03Qa9lV60Ym4N4FxMOLF3",
+          "upvotedAt": "2025-08-05T21:58:26.411Z"
+        },
+        {
+          "userId": "KPiwbBVM7GerlT1lHtKXcsvOpA32",
+          "upvotedAt": "2025-08-05T23:53:42.877Z"
+        },
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T14:30:08.684Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "TolGoWtl3DK5YR9KRBZD",
+      "authorId": "dg5GHz9xh5WHiUxOEu2RfV4KVYy1",
+      "authorName": "Anonymous",
+      "title": "Learning Spanish",
+      "content": "If you know any word ending the in ion in English or Spanish they are essentially the same. So congrats on knowing Spanish.",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 1,
+      "createdAt": "2025-08-06T11:31:40.276Z",
+      "updatedAt": "2025-08-06T11:31:40.276Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:18.697Z"
+        },
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-12-10T08:21:02.424Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "ptsT28D003kMj1jpHDT3",
+          "authorName": "Anonymous",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "Ooh very helpful thank you!",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-06T14:28:17.852Z"
+        }
+      ]
+    },
+    {
+      "id": "VhJs6SeDJHNnLf2JpPhB",
+      "authorId": "AYvtgUgivIef01XQmMDobL6P2eC3",
+      "authorName": "Bah Fatmata Binta",
+      "title": "Apprendre L'anglais Facilement",
+      "content": "J'ai réussi a apprendre anglais facilement et rapidement grace au travail. J'ai été embauchée dans un restaurant et le contact avec les clients et mes collègues m'ont beaucoup aidé avec mon apprentissage!",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [],
+      "upvotes": 0,
+      "createdAt": "2025-12-10T18:12:28.343Z",
+      "updatedAt": "2025-12-10T18:18:12.904Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:05.097Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "XWekBhH5uweEaETu9hhz",
+      "authorId": "MjH2e2UGbgR00I5Xeonj4QfnQsA3",
+      "authorName": "Anonymous",
+      "title": "Swedish conjugation",
+      "content": "Something a linguistics major enlightened me to was the fact that there's no conjugation of verbs in Swedish, and as such, it's easier to learn (in that sense specifically). I had spoken Swedish my whole life but never realized that until that day",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [
+        "swedish"
+      ],
+      "upvotes": 1,
+      "createdAt": "2025-08-05T23:55:59.465Z",
+      "updatedAt": "2025-08-05T23:55:59.466Z",
+      "_upvotes": [
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T02:01:06.491Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "2gEg4PafMKN5yZXhqr3t",
+          "authorName": "Anonymous",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "so cool!",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-07T00:48:15.721Z"
+        }
+      ]
+    },
+    {
+      "id": "fjBzQ3KLmahyfrCFhiDE",
+      "authorId": "DBxcv57pJkPafJekifndlXULlGR2",
+      "authorName": "Anonymous",
+      "title": "Arabic non-human plurals",
+      "content": "In Arabic non-human plurals are treated like feminine singulars",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 2,
+      "createdAt": "2025-08-06T00:50:01.370Z",
+      "updatedAt": "2025-08-06T00:50:01.370Z",
+      "_upvotes": [
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T02:00:28.656Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "fuwCQ7gXxAJCWvpSICGx",
+      "authorId": "EkdVwbJ70aMGACs0ZzOr25kMPRF2",
+      "authorName": "Anonymous",
+      "title": "What languages do you speak and what is a language you would love to know?",
+      "content": "!",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [
+        "fun",
+        "languages"
+      ],
+      "upvotes": 1,
+      "createdAt": "2025-08-07T00:54:14.693Z",
+      "updatedAt": "2025-08-07T00:55:09.278Z",
+      "_upvotes": [
+        {
+          "userId": "EkdVwbJ70aMGACs0ZzOr25kMPRF2",
+          "upvotedAt": "2025-08-07T00:55:19.299Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "eZKj0KFE7UFzJ3RXSaO5",
+          "authorName": "Anonymous",
+          "authorId": "jKe93Z0Al0N5MV3ng93OU3BIswY2",
+          "content": "Hindi",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-07T04:22:32.347Z"
+        },
+        {
+          "id": "soiTlOyUb7lhf7ete5bI",
+          "authorName": "Ramatoulaye Bah",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "I speak French English Spanish and Jakhanke and would love to know Arabic! I can read it but I don't understand most of it haha",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-07T23:35:55.330Z"
+        }
+      ]
+    },
+    {
+      "id": "gp0mgeBx5jXD88BN8tbs",
+      "authorId": "wLWgqci5ADMETLe3nzbmGcUyHO73",
+      "authorName": "Ellen Mathews",
+      "title": "Portuguese help!",
+      "content": "Hello!\n\n\nThis morning on my walk to school my roommate was trying to practice her portuguese and I didn't understand anything. This made me really sad cause I want to support her academic goals!\n\nI have some experience in intermediate spanish classes, does anyone have any helpful resources or suggestions as to how I could use this prior knowledge of Spanish to start learning portuguese so I can help my roommate? \n\nThanks!!",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [
+        "spanish",
+        "portuguese",
+        "learning new languages"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-12-10T18:56:01.162Z",
+      "updatedAt": "2025-12-10T18:56:01.162Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:00.131Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "jFOqe5w7QxGvbiuTrxbU",
+      "authorId": "pkSh1xaspVdZQ0pBhivrcMXiGRe2",
+      "authorName": "Anonymous",
+      "title": "trying to get my tagalog up! (filipino)",
+      "content": "any recs on how to learn different dialects of tagalog? want to learn more for my family back home :)",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [
+        "filipino"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-08-06T23:42:23.578Z",
+      "updatedAt": "2025-08-06T23:42:23.578Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:12.897Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "q90vLS6vTjG1KI0FuKGw",
+      "authorId": "0IEXDIrJq8ZG2eREKXPWtTPV19x2",
+      "authorName": "Anonymous",
+      "title": "Being cool in France",
+      "content": "I wanna speak French in France but I don't think it will help me build my street cred..",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [
+        "french"
+      ],
+      "upvotes": 1,
+      "createdAt": "2025-08-05T23:37:39.416Z",
+      "updatedAt": "2025-08-05T23:37:39.416Z",
+      "_upvotes": [
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T02:02:05.043Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "qiPSc96R7yu74DRL2iYd",
+      "authorId": "kuJRxfvydRPhCiRCtD1VL3BQTmF2",
+      "authorName": "Anonymous",
+      "title": "いいですね",
+      "content": "This website is pretty cool",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 1,
+      "createdAt": "2025-08-07T00:47:18.920Z",
+      "updatedAt": "2025-08-07T00:47:18.920Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:11.580Z"
+        },
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-07T00:47:26.504Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "rz7ogcIXloGa6OgcNoU1",
+      "authorId": "zamKThDIFqW86WMjNeKURy7vata2",
+      "authorName": "Anonymous",
+      "title": "French Fruits!!",
+      "content": "Two things I learned while studying abroad that are not quite helpful for French life are:\n“J’ai la pêche” basically just means that you feel peachy and “j’ai la banane” (I have the banana) which means that you are happy- your smile is in the shape of a banana. \nI used these two when expressing contentment or excitement. They were usually met with a laugh and I never really heard any one else say them. They are apparently more common sayings for kids and older generations. However, I say we bring them back. Fruits should be used in French expression!! J’ai la pêche et la banane d'entendre vos pensées :) Merci!",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [
+        "french"
+      ],
+      "upvotes": 2,
+      "createdAt": "2025-08-05T22:29:04.424Z",
+      "updatedAt": "2025-08-05T22:29:04.425Z",
+      "_upvotes": [
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-05T22:42:22.730Z"
+        },
+        {
+          "userId": "zamKThDIFqW86WMjNeKURy7vata2",
+          "upvotedAt": "2025-08-05T22:30:41.189Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "pxSORlXr4BKp3isJcGx3",
+          "authorName": "Ramatoulaye Bah",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "Je suis tout à fait d'accord! Let's bring those back, in my opinion older French slangs sound cooler 😎😎",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-05T22:42:06.453Z"
+        }
+      ]
+    },
+    {
+      "id": "sxfwQaGfzTe624EbuoWD",
+      "authorId": "KPiwbBVM7GerlT1lHtKXcsvOpA32",
+      "authorName": "Anonymous",
+      "title": "Why does Italian always feel so cool to speak!",
+      "content": "I swear everyone tends to agree (me included!) that Italian just sounds cooler and more emotional than most languages. Maybe it’s a cultural thing/all the body language they use.",
+      "imageUrl": null,
+      "isAnonymous": true,
+      "tags": [],
+      "upvotes": 1,
+      "createdAt": "2025-08-05T23:53:22.938Z",
+      "updatedAt": "2025-08-05T23:53:22.938Z",
+      "_upvotes": [
+        {
+          "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "upvotedAt": "2025-08-06T02:01:23.693Z"
+        }
+      ],
+      "_comments": [
+        {
+          "id": "2LaKOWBgJVP7XuRxmnY2",
+          "authorName": "Ramatoulaye Bah",
+          "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+          "content": "French sounds better! (not biased at all)",
+          "isAnonymous": false,
+          "upvotes": 0,
+          "createdAt": "2025-08-06T02:01:41.827Z"
+        }
+      ]
+    },
+    {
+      "id": "vTUIWnqU1DpwPcvAq3GC",
+      "authorId": "u0Poq2msh0YNLlHCcLfz31VPktu1",
+      "authorName": "Adelaide Miron",
+      "title": "I am learning American Sign Language right now!",
+      "content": "Learning a non-spoken language is so cool because you learn through actions, not words as hearing people know them.",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [],
+      "upvotes": 0,
+      "createdAt": "2025-12-10T18:50:53.101Z",
+      "updatedAt": "2025-12-10T18:50:53.101Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:02.679Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "wYAIhe1oUDIIWbgyijdi",
+      "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "authorName": "Anonymous",
+      "title": "Danish tips!!",
+      "content": "Hey, I'd like to learn Danish, any tips?",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Danishdialectmap.png/330px-Danishdialectmap.png",
+      "isAnonymous": true,
+      "tags": [
+        "danish",
+        "learning"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-12-10T20:46:45.584Z",
+      "updatedAt": "2025-12-10T20:46:45.584Z",
+      "_upvotes": [],
+      "_comments": []
+    },
+    {
+      "id": "x37p00aPX7unizKSxKYV",
+      "authorId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "authorName": "Ramatoulaye Bah",
+      "title": "Learn languages",
+      "content": "Learn languages it's fun (but no to duolingo). There are other ways to learn like talking to native speakers, watching content or flashcards that are more effective.",
+      "imageUrl": "data:image/jpeg;base64,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",
+      "isAnonymous": false,
+      "tags": [
+        "fun",
+        "duolingo"
+      ],
+      "upvotes": 0,
+      "createdAt": "2025-08-07T00:49:00.188Z",
+      "updatedAt": "2025-12-10T20:39:54.676Z",
+      "_upvotes": [
+        {
+          "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+          "upvotedAt": "2025-12-10T19:47:06.797Z"
+        }
+      ],
+      "_comments": []
+    },
+    {
+      "id": "za20nTbE7eZD3Qrl02dW",
+      "authorId": "1cIJrWpakoPXxPIVH5KWZRyWHcB3",
+      "authorName": "Ari Berry",
+      "title": "Polishing up my Italian before my Positano Trip 🍝",
+      "content": "I started using iTalki recently and so far I’m IN LOVE with it!!! I enjoy the fact that I converse with locals in any language and learn a few slangs along the way. Right now I’m focusing on Italian 🇮🇹 so I can enjoy my Italian summer:)",
+      "imageUrl": null,
+      "isAnonymous": false,
+      "tags": [],
+      "upvotes": 1,
+      "createdAt": "2025-08-06T03:44:53.339Z",
+      "updatedAt": "2025-08-06T03:44:53.339Z",
+      "_upvotes": [
+        {
+          "userId": "IxkDQGiJfnhTjtUQT056TvkItfB3",
+          "upvotedAt": "2025-08-06T23:40:53.847Z"
+        }
+      ],
+      "_comments": []
+    }
+  ],
+  "savedPosts": [
+    {
+      "userId": "FD7wPB7xn3bQpl3dYvlDwhMVldD2",
+      "postId": "Nqyg5RhbuaaW9EHWvL42",
+      "savedAt": "2025-12-10T19:47:17.464Z"
+    },
+    {
+      "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "postId": "A3z3VnOCEA0lRmWuVBUl",
+      "savedAt": "2025-12-10T08:14:59.334Z"
+    },
+    {
+      "userId": "XfbGqP49lwYhAbd50FvwboME1gr2",
+      "postId": "K0XwXE750cTHY40oic0c",
+      "savedAt": "2025-12-10T20:54:45.356Z"
+    }
+  ]
+}
