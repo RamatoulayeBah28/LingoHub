@@ -4,6 +4,30 @@ The dataService module provides functions to interact with Firestore for fetchin
 
 import { supabase } from "../supabase";
 
+// Normalize post from Supabase snake_case to camelCase for components
+function normalizePost(post) {
+  return {
+    ...post,
+    authorName: post.author_name,
+    imageUrl: post.image_url,
+    isAnonymous: post.is_anonymous,
+    upvotes: post.upvotes_count,
+    createdAt: post.created_at,
+    updatedAt: post.updated_at,
+    tags: post.tags || [],
+  };
+}
+
+// Normalize comment from Supabase snake_case to camelCase for components
+function normalizeComment(comment) {
+  return {
+    ...comment,
+    authorName: comment.author_name,
+    isAnonymous: comment.is_anonymous,
+    createdAt: comment.created_at,
+  };
+}
+
 // Get a single post by ID
 export async function getPostById(postId) {
   try {
@@ -12,7 +36,7 @@ export async function getPostById(postId) {
       .select("*, post_tags(tag)")
       .eq("id", postId)
       .single();
-    return data ? { ...data, tags: data.post_tags.map((t) => t.tag) } : null;
+    return data ? normalizePost({ ...data, tags: data.post_tags.map((t) => t.tag) }) : null;
   } catch (e) {
     console.error("Error getting post:", e);
     return null;
@@ -30,10 +54,7 @@ export async function getAllPosts(maxPosts = 50) {
       .select("*, post_tags(tag)")
       .order("created_at", { ascending: false })
       .limit(maxPosts);
-    return data.map((post) => ({
-      ...post,
-      tags: post.post_tags.map((t) => t.tag),
-    }));
+    return data.map((post) => normalizePost({ ...post, tags: post.post_tags.map((t) => t.tag) }));
   } catch (e) {
     console.error("Error getting posts:", e);
     return [];
@@ -51,7 +72,7 @@ export async function getCommentsForPost(postId) {
       .select("*")
       .eq("post_id", postId)
       .order("created_at", { ascending: true });
-    return data || [];
+    return (data || []).map(normalizeComment);
   } catch (e) {
     console.error("Error getting comments:", e);
     return [];
@@ -66,10 +87,10 @@ export async function getUserSavedPosts(userId) {
       .select("*, posts(*, post_tags(tag))")
       .eq("user_id", userId)
       .order("saved_at", { ascending: false });
-    return data.map((row) => ({
+    return data.map((row) => normalizePost({
       ...row.posts,
       tags: row.posts.post_tags.map((t) => t.tag),
-      saved_at: row.saved_at,
+      savedAt: row.saved_at,
     }));
   } catch (e) {
     console.error("Error getting saved posts:", e);
@@ -85,10 +106,7 @@ export async function getPostsByAuthor(authorId) {
       .select("*, post_tags(tag)")
       .eq("user_id", authorId)
       .order("created_at", { ascending: false });
-    return data.map((post) => ({
-      ...post,
-      tags: post.post_tags.map((t) => t.tag),
-    }));
+    return data.map((post) => normalizePost({ ...post, tags: post.post_tags.map((t) => t.tag) }));
   } catch (e) {
     console.error("Error getting posts by author:", e);
     return [];
@@ -157,10 +175,7 @@ export async function getPostsByTags(tags, maxPosts = 50) {
       .in("id", postIds)
       .order("created_at", { ascending: false })
       .limit(maxPosts);
-    return data.map((post) => ({
-      ...post,
-      tags: post.post_tags.map((t) => t.tag),
-    }));
+    return data.map((post) => normalizePost({ ...post, tags: post.post_tags.map((t) => t.tag) }));
   } catch (e) {
     console.error("Error getting posts by tags:", e);
     return [];

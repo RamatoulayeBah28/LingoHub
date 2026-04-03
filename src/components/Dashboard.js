@@ -4,7 +4,7 @@ It allows users to view details of each post and manage their saved posts.
 */
 import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { getUserSavedPosts, getPostById } from "../services/dataService";
+import { getUserSavedPosts } from "../services/dataService";
 import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
 import "../styles/Dashboard.css";
@@ -23,20 +23,7 @@ function Dashboard() {
       setLoading(true);
       try {
         const savedPostsData = await getUserSavedPosts(currentUser.id);
-
-        // For each saved post, fetch the full post data
-        const fullPostsData = await Promise.all(
-          savedPostsData.map(async (savedPost) => {
-            const fullPost = await getPostById(savedPost.postId);
-            return fullPost
-              ? { ...fullPost, savedAt: savedPost.savedAt }
-              : null;
-          }),
-        );
-
-        // Filter out null posts (posts that might have been deleted)
-        const validPosts = fullPostsData.filter((post) => post !== null);
-        setSavedPosts(validPosts);
+        setSavedPosts(savedPostsData);
       } catch (error) {
         console.error("Error loading saved posts:", error);
       } finally {
@@ -53,18 +40,7 @@ function Dashboard() {
     setLoading(true);
     try {
       const savedPostsData = await getUserSavedPosts(currentUser.id);
-
-      // For each saved post, fetch the full post data
-      const fullPostsData = await Promise.all(
-        savedPostsData.map(async (savedPost) => {
-          const fullPost = await getPostById(savedPost.postId);
-          return fullPost ? { ...fullPost, savedAt: savedPost.savedAt } : null;
-        }),
-      );
-
-      // Filter out null posts (posts that might have been deleted)
-      const validPosts = fullPostsData.filter((post) => post !== null);
-      setSavedPosts(validPosts);
+      setSavedPosts(savedPostsData);
     } catch (error) {
       console.error("Error loading saved posts:", error);
     } finally {
@@ -98,7 +74,7 @@ function Dashboard() {
 
       <div className="dashboard-content">
         {loading ? (
-          <div className="loading">Loading your saved posts...</div>
+          <div className="loading-state">Loading your saved posts...</div>
         ) : savedPosts.length === 0 ? (
           <div className="empty-state">
             <h2>No saved posts yet</h2>

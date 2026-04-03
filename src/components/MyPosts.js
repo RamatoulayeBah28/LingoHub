@@ -135,7 +135,7 @@ function MyPosts() {
 
       <div className="my-posts-content">
         {loading ? (
-          <div className="loading">Loading your posts...</div>
+          <div className="loading-state">Loading your posts...</div>
         ) : myPosts.length === 0 ? (
           <div className="empty-state">
             <h2>No posts yet</h2>
