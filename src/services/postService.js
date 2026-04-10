@@ -70,7 +70,9 @@ export async function addCommentToPost(
       author_name: isAnonymous
         ? "Anonymous"
         : user.user_metadata?.full_name || user.email,
+      // TODO fix to display name
     });
+    return true;
   } catch (e) {
     console.error("Error adding comment: ", e);
     return undefined;
@@ -174,11 +176,12 @@ export async function updatePost(postId, updatedData) {
       .update({
         title: updatedData.title,
         content: updatedData.content,
-        image_url: updatedData.image_url,
-        is_anonymous: updatedData.is_anonymous,
-        author_name: updatedData.is_anonymous
+        image_url: updatedData.imageUrl,
+        is_anonymous: updatedData.isAnonymous,
+        // TODO Fix to be display name
+        author_name: updatedData.isAnonymous
           ? "Anonymous"
-          : user.user_metadata?.full_name || user.email,
+          : user.user_metadata?.full_name,
         updated_at: new Date().toISOString(),
       })
       .eq("id", postId)
@@ -190,6 +193,7 @@ export async function updatePost(postId, updatedData) {
         .from("post_tags")
         .insert(normalizedTags.map((tag) => ({ post_id: postId, tag })));
     }
+    return true;
   } catch (e) {
     console.error("Error updating post:", e);
     return false;
@@ -208,6 +212,7 @@ export async function deletePost(postId) {
       .delete()
       .eq("id", postId)
       .eq("user_id", user.id);
+    return true;
   } catch (e) {
     console.error("Error deleting post:", e);
     return false;

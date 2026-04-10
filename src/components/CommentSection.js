@@ -26,8 +26,13 @@ function CommentSection({ comments, onAddComment, loading, currentUser }) {
     try {
       const success = await onAddComment(newComment.trim(), isAnonymous);
       if (success) {
+        console.log("setting new comment...");
         setNewComment("");
+        console.log("commeent set successfully");
+        setIsSubmitting(false);
+
         setIsAnonymous(false);
+        return true;
       }
     } catch (error) {
       console.error("Error submitting comment:", error);

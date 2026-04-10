@@ -24,7 +24,7 @@
 }
 
 .comment-textarea {
-  width: 100%;
+  width: 95%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -38,7 +38,7 @@
 
 .comment-textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #8c8c44;
   box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
 }
 
@@ -56,7 +56,8 @@
 }
 
 .submit-comment-button {
-  background: #667eea;
+  /* float: right; TODO - MOVE IT RIGHT*/
+  background: #8c8c44;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -68,7 +69,7 @@
 }
 
 .submit-comment-button:hover:not(:disabled) {
-  background: #5a6fd8;
+  background: #8c8c44;
   transform: translateY(-1px);
 }
 
@@ -119,7 +120,7 @@
 
 .comment-author {
   font-weight: 600;
-  color: #667eea;
+  color: #8c8c44;
   font-size: 0.9rem;
 }
 
@@ -182,9 +183,9 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #4f46e5;
+  accent-color: #8c8c44;
 }
 
 .comment-anonymous-group .checkbox-label:hover {
-  color: #4f46e5;
+  color: #8c8c44;
 }
