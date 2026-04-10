@@ -30,29 +30,11 @@ function Login() {
       // Handle specific Firebase Auth errors
       let errorMessage = "Failed to log in";
 
-      if (error.code) {
-        switch (error.code) {
-          case "auth/user-not-found":
-            errorMessage = "No account found with this email";
-            break;
-          case "auth/wrong-password":
-            errorMessage = "Incorrect password";
-            break;
-          case "auth/invalid-email":
-            errorMessage = "Please enter a valid email address";
-            break;
-          case "auth/user-disabled":
-            errorMessage = "This account has been disabled";
-            break;
-          case "auth/too-many-requests":
-            errorMessage = "Too many failed attempts. Please try again later";
-            break;
-          default:
-            errorMessage = error.message || "Failed to log in";
-        }
-      }
+      // if (error.code) {
+      //   setError(error.message || errorMessage)
+      // }
 
-      setError(errorMessage);
+      setError(error.message || errorMessage);
     } finally {
       setLoading(false);
     }

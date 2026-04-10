@@ -18,7 +18,7 @@ export async function createNewPost(
   if (!user) return;
 
   try {
-    const { data: post } = await supabase
+    const { data: post, error: insertError } = await supabase
       .from("posts")
       .insert({
         user_id: user.id,
@@ -32,6 +32,8 @@ export async function createNewPost(
       })
       .select()
       .single();
+
+    if (insertError) throw insertError;
 
     if (tags.length > 0) {
       const normalizedTags = tags
