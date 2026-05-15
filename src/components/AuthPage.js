@@ -23,11 +23,9 @@ function AuthPage() {
         </div>
       </div>
 
-      {/* <------- TODO -------> */}
-      {/* Format in CSS for reason to be in a container */}
       {reason && (
         <div className="auth-reason">
-          <p>You must be logged in to {reason} on LingoHub</p>
+          <p><strong>You must be logged in to {reason} on LingoHub</strong></p>
           <p>Log in below or sign up</p>
         </div>
       )}

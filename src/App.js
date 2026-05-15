@@ -10,10 +10,12 @@ import "./styles/App.css";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PostForm from "./components/PostForm";
 
 function AppContent() {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [postCreatedSignal, setPostCreatedSignal] = useState(0);
   const location = useLocation();
 
   const handleCreatePost = () => {
@@ -22,6 +24,10 @@ function AppContent() {
 
   const handleCloseCreateForm = () => {
     setShowCreateForm(false);
+  };
+  const handlePostCreated = () => {
+    setPostCreatedSignal((s) => s + 1);
+    handleCloseCreateForm();
   };
 
   const handleSearch = (term) => {
@@ -34,6 +40,14 @@ function AppContent() {
       {location.pathname !== "/auth" && (
         <Navbar onCreatePost={handleCreatePost} onSearch={handleSearch} />
       )}
+      {/* Post Creation Form */}
+      {showCreateForm && (
+        <PostForm
+          onClose={handleCloseCreateForm}
+          onPostCreated={handlePostCreated}
+        />
+      )}
+
       <main className="main-content">
         <Routes>
           <Route
@@ -58,9 +72,8 @@ function AppContent() {
             path="/"
             element={
               <HomeFeed
-                showCreateForm={showCreateForm}
-                onCloseCreateForm={handleCloseCreateForm}
                 searchTerm={searchTerm}
+                postCreatedSignal={postCreatedSignal}
               />
             }
           />

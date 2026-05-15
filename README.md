@@ -1,92 +1,128 @@
-# Web Development Final Project - *LingoHub*
+# LingoHub
 
-Submitted by: **Ramatoulaye Bah**
+A full-stack social forum for language enthusiasts. Users can share posts, comment, upvote, save content, filter by tags, and post anonymously, all backed by a Supabase PostgreSQL database with real authentication.
 
-This web app: **LingoHub is a modern social platform designed for language enthusiasts to connect, share experiences, and learn from each other.**
+---
 
-Time spent: **8** hours spent in total
+## Live Demo
 
-## Required Features
+[lingohub.vercel.app](https://lingo-hub.vercel.app) 
 
-The following **required** functionality is completed:
+---
 
+## Tech Stack
 
-- [x] **Web app includes a create form that allows the user to create posts**
-  - Form requires users to add a post title
-  - Forms should have the *option* for users to add: 
-    - additional textual content
-    - an image added as an external image URL
-- [x] **Web app includes a home feed displaying previously created posts**
-  - Web app must include home feed displaying previously created posts
-  - By default, each post on the posts feed should show only the post's:
-    - creation time
-    - title 
-    - upvotes count
-  - Clicking on a post should direct the user to a new page for the selected post
-- [x] **Users can view posts in different ways**
-  - Users can sort posts by either:
-    -  creation time
-    -  upvotes count
-  - Users can search for posts by title
-- [x] **Users can interact with each post in different ways**
-  - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
-    - content
-    - image
-    - comments
-  - Users can leave comments underneath a post on the post page
-  - Each post includes an upvote button on the post page. 
-    - Each click increases the post's upvotes count by one
-    - Users can upvote any post any number of times
+| Layer | Technology |
+|---|---|
+| Frontend | React, React Router |
+| Backend | Supabase (PostgreSQL) |
+| Auth | Supabase Auth — email/password, Google OAuth |
 
-- [x] **A post that a user previously created can be edited or deleted from its post pages**
-  - After a user creates a new post, they can go back and edit the post
-  - A previously created post can be deleted from its post page
+---
 
-The following **optional** features are implemented:
+## Features
 
+### Core
+- **Home feed** — paginated post cards with title, author, date, upvote count, and tags
+- **Post detail** — modal with full content, image, tags, and threaded comments
+- **Create post** — title, content, optional image URL, tags, anonymous toggle
+- **Edit / delete posts** — owners can edit or delete from the My Posts page
+- **Comments** — add comments on any post, with optional anonymous posting
+- **Upvotes** — toggle upvote with optimistic UI and server reconciliation
+- **Save posts** — heart-icon save to a personal Saved Posts dashboard
 
-- [x] Web app implements pseudo-authentication
-  - Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
-  - **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
-  - For both options, only the original user author of a post can update or delete it
-- [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post
-  - Users can repost a previous post by referencing its post ID
-  - On the post page of the new post, the referenced post is displayed and linked, creating a thread
-- [x] Users can customize the interface
-  - e.g., selecting the color scheme or showing the content and image of each post on the home feed
-- [x] Users can add more characterics to their posts
-  - Users can share and view web videos
-  - Users can set flags such as "Question" or "Opinion" while creating a post
-  - Users can filter posts by flags on the home feed
-  - Users can upload images directly from their local machine as an image file
-- [ ] Web app displays a loading animation whenever data is being fetched
+### Discovery
+- **Tag filtering** — add/remove multiple tag filters on the home feed
+- **Sort** — by most recent or most popular (upvotes)
+- **Search** — full-text search across title, content, author name, and tags
 
-The following **additional** features are implemented:
+### Auth & Identity
+- Email/password sign-up and login
+- Google OAuth sign-in
+- Auto-generated unique username on account creation
+- Display name shown in navbar (fetched from user profile)
+- Protected routes redirect guests to `/auth` with a contextual reason message
+- Anonymous posting and commenting
 
-* [ ] List anything else that you added to improve the site's functionality!
+### Data Migration
+- Migrated from Firebase Firestore to Supabase PostgreSQL
+- Lazy password migration via Supabase Edge Function — legacy Firebase users are migrated on their first Supabase login without needing to reset their password
 
-## Video Walkthrough
+---
 
-Here's a walkthrough of implemented user stories:
+## Project Structure
 
-https://imgur.com/a/BzMFTu4
+```
+src/
+├── components/
+│   ├── AuthPage.js        # Auth page layout (Login + SignUp side by side)
+│   ├── CommentSection.js  # Comment list + add comment form
+│   ├── Dashboard.js       # Saved posts page (/saved)
+│   ├── HomeFeed.js        # Main feed with filtering and sorting
+│   ├── Login.js           # Login form
+│   ├── MyPosts.js         # User's own posts (/my-posts) — edit + delete
+│   ├── Navbar.js          # Top navigation with search and create post
+│   ├── PostCard.js        # Post card component (save + upvote actions)
+│   ├── PostDetail.js      # Full post modal with comments
+│   ├── PostForm.js        # Create / edit post modal form
+│   ├── ProtectedRoute.js  # Route guard — redirects to /auth if not logged in
+│   └── SignUp.js          # Sign-up form
+├── contexts/
+│   └── AuthContext.js     # Global auth state via Supabase Auth
+├── services/
+│   ├── analyticsService.js  # Vercel Analytics event wrappers
+│   ├── dataService.js       # All read operations (posts, comments, tags, saves, upvotes)
+│   ├── postService.js       # All write operations (create, update, delete, comment, upvote, save)
+│   └── userService.js       # User profile operations (in progress)
+├── styles/                  # Per-component CSS files
+├── supabase.js              # Supabase client initialization
+└── App.js                   # Root component with routing
+```
 
-## Notes
+---
 
-Describe any challenges encountered while building the app.
+## Database Schema
+
+```sql
+users          (id, email, username, display_name, preferred_language)
+posts          (id, user_id, title, content, image_url, is_anonymous, author_name, upvotes_count, created_at, updated_at)
+post_tags      (post_id, tag)
+comments       (id, post_id, user_id, content, is_anonymous, author_name, created_at)
+saved_posts    (post_id, user_id, saved_at)
+upvotes        (post_id, user_id)
+```
+
+---
+
+## Roadmap
+
+- [ ] User profile page — edit username, display name, password, preferred language
+- [ ] Connection requests — follow / connect with other users
+- [ ] Email notifications — upvotes, comments, saves, connection requests (Supabase triggers)
+- [ ] Direct messaging — chat between connected users via Supabase Realtime
+- [ ] AI translation — auto-translate posts not in the user's preferred language
+- [ ] Create post from any page (currently only available from the home feed)
+- [ ] Comment edit / delete
+- [ ] Infinite scroll / pagination (currently capped at 50 posts)
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Set environment variables
+cp .env.example .env
+# Add REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY
+
+# Start development server
+npm start
+```
+
+---
 
 ## License
 
-    Copyright [2025] [Ramatoulaye Bah]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Copyright 2026 Ramatoulaye Bah — Apache License 2.0

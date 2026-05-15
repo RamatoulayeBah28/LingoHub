@@ -4,6 +4,7 @@ It includes functionality for saving posts, upvoting posts, and viewing post det
 before selecting the post to see more.
 */
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import {
   savePostForUser,
@@ -28,6 +29,8 @@ function PostCard({
   onPostUnsaved,
 }) {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isSaved, setIsSaved] = useState(isInSavedPosts);
   const [isLoading, setIsLoading] = useState(false);
   const [hasUpvoted, setHasUpvoted] = useState(false);
@@ -54,7 +57,7 @@ function PostCard({
         try {
           const upvotedStatus = await hasUserUpvotedPost(
             post.id,
-            currentUser.id
+            currentUser.id,
           );
           setHasUpvoted(upvotedStatus);
 
@@ -75,7 +78,7 @@ function PostCard({
     e.stopPropagation(); // Prevent triggering post click
 
     if (!currentUser) {
-      alert("Please log in to save posts");
+      navigate("/auth", { state: { reason: "save posts", from: location.pathname } });
       return;
     }
 
@@ -103,7 +106,7 @@ function PostCard({
     e.stopPropagation(); // Prevent triggering post click
 
     if (!currentUser) {
-      alert("Please log in to upvote posts");
+      navigate("/auth", { state: { reason: "upvote posts", from: location.pathname } });
       return;
     }
 

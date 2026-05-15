@@ -1,7 +1,8 @@
 /*
-The postService module provides functions to create, update, delete, comment on, save, and upvote posts in Firestore.
+The postService module provides functions to create, update, delete, comment on, save, and upvote posts in Supabase.
 */
 import { supabase } from "../supabase";
+import { getUserName } from "./userService";
 
 // Storing a New Post
 export async function createNewPost(
@@ -28,7 +29,7 @@ export async function createNewPost(
         is_anonymous: isAnonymous,
         author_name: isAnonymous
           ? "Anonymous"
-          : user.user_metadata?.full_name || user.email,
+          : (await getUserName(user.id)) || "Unknown",
       })
       .select()
       .single();
@@ -69,13 +70,51 @@ export async function addCommentToPost(
       is_anonymous: isAnonymous,
       author_name: isAnonymous
         ? "Anonymous"
-        : user.user_metadata?.full_name || user.email,
-      // TODO fix to display name
+        : (await getUserName(user.id)) || "Unknown",
     });
     return true;
   } catch (e) {
     console.error("Error adding comment: ", e);
     return undefined;
+  }
+}
+
+export async function editComment(commentId, newContent) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return false;
+
+  try {
+    const { data, error } = await supabase
+      .from("comments")
+      .update({ content: newContent })
+      .eq("id", commentId)
+      .eq("user_id", user.id)
+      .select("id");
+    return !error && data?.length > 0;
+  } catch (e) {
+    console.error("Error editing comment:", e);
+    return false;
+  }
+}
+
+export async function deleteComment(commentId) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return false;
+
+  try {
+    const { error } = await supabase
+      .from("comments")
+      .delete()
+      .eq("id", commentId)
+      .eq("user_id", user.id);
+    return !error;
+  } catch (e) {
+    console.error("Error deleting comment:", e);
+    return false;
   }
 }
 
@@ -178,10 +217,9 @@ export async function updatePost(postId, updatedData) {
         content: updatedData.content,
         image_url: updatedData.imageUrl,
         is_anonymous: updatedData.isAnonymous,
-        // TODO Fix to be display name
         author_name: updatedData.isAnonymous
           ? "Anonymous"
-          : user.user_metadata?.full_name,
+          : (await getUserName(user.id)) || "Unknown",
         updated_at: new Date().toISOString(),
       })
       .eq("id", postId)

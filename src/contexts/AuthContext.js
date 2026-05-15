@@ -3,6 +3,7 @@ Manages user authentication state and provides authentication functions such as 
 */
 import { createContext, useContext, useState, useEffect } from "react";
 import { supabase } from "../supabase";
+import { getDisplayName } from "../services/userService";
 
 const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
+  const [displayName, setDisplayName] = useState("");
   const [loading, setLoading] = useState(true);
 
   async function generateUniqueUsername() {
@@ -104,6 +106,16 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
+    if (!currentUser) {
+      setDisplayName("");
+      return;
+    }
+    getDisplayName(currentUser.id).then((name) =>
+      setDisplayName(name || currentUser.email),
+    );
+  }, [currentUser]);
+
+  useEffect(() => {
     // Non-async callback — prevents deadlock with signInWithPassword
     const {
       data: { subscription },
@@ -123,6 +135,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    displayName,
     signup,
     login,
     loginWithGoogle,

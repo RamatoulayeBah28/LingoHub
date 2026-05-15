@@ -25,16 +25,7 @@ function Login() {
       trackLogin("email");
       navigate(location.state?.from || "/");
     } catch (error) {
-      console.error("Login error:", error);
-
-      // Handle specific Firebase Auth errors
-      let errorMessage = "Failed to log in";
-
-      // if (error.code) {
-      //   setError(error.message || errorMessage)
-      // }
-
-      setError(error.message || errorMessage);
+      setError(error.message || "Failed to log in");
     } finally {
       setLoading(false);
     }
@@ -48,28 +39,7 @@ function Login() {
       trackLogin("google");
       navigate(location.state?.from || "/");
     } catch (error) {
-      console.error("Google sign-in error:", error);
-
-      let errorMessage = "Failed to sign in with Google";
-
-      if (error.code) {
-        switch (error.code) {
-          case "auth/popup-closed-by-user":
-            errorMessage = "Sign-in cancelled";
-            break;
-          case "auth/popup-blocked":
-            errorMessage = "Pop-up blocked. Please allow pop-ups and try again";
-            break;
-          case "auth/account-exists-with-different-credential":
-            errorMessage =
-              "An account already exists with this email using a different sign-in method";
-            break;
-          default:
-            errorMessage = error.message || "Failed to sign in with Google";
-        }
-      }
-
-      setError(errorMessage);
+      setError(error.message || "Failed to sign in with Google");
     } finally {
       setLoading(false);
     }

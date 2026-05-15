@@ -8,11 +8,10 @@ import { useState, useEffect } from "react";
 import { getAllPosts, getPostsByTags } from "../services/dataService";
 import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
-import PostForm from "./PostForm";
 import "../styles/HomeFeed.css";
 import { LuRefreshCcw } from "react-icons/lu";
 
-function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
+function HomeFeed({ searchTerm, postCreatedSignal }) {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,8 +24,9 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
   // useCallback in the future
   useEffect(() => {
     loadPosts();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedTags]); // Reload when tags change
+  }, [selectedTags, postCreatedSignal]); // Reload when tags change
 
   useEffect(() => {
     filterAndSortPosts();
@@ -99,13 +99,13 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
     setSelectedPost(null);
   };
 
-  const handlePostCreated = async () => {
-    // Reload posts to include the new one
-    await loadPosts();
-    if (onCloseCreateForm) {
-      onCloseCreateForm();
-    }
-  };
+  // const handlePostCreated = async () => {
+  //   // Reload posts to include the new one
+  //   await loadPosts();
+  //   if (onCloseCreateForm) {
+  //     onCloseCreateForm();
+  //   }
+  // };
 
   const handleRefresh = () => {
     loadPosts();
@@ -277,14 +277,6 @@ function HomeFeed({ showCreateForm, onCloseCreateForm, searchTerm }) {
           </div>
         )}
       </div>
-
-      {/* Post Creation Form */}
-      {showCreateForm && (
-        <PostForm
-          onClose={onCloseCreateForm}
-          onPostCreated={handlePostCreated}
-        />
-      )}
 
       {/* Post Detail Modal */}
       {selectedPost && (

@@ -4,6 +4,7 @@ including title, content, author, date, image, tags, and comments.
 It allows users to add comments, upvote the post, and save/unsave the post.
 */
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import {
   getCommentsForPost,
@@ -12,6 +13,8 @@ import {
 } from "../services/dataService";
 import {
   addCommentToPost,
+  editComment,
+  deleteComment,
   savePostForUser,
   removeSavedPostForUser,
   upvotePost,
@@ -30,6 +33,8 @@ import {
 
 function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [comments, setComments] = useState([]);
   const [loadingComments, setLoadingComments] = useState(true);
   const [isSaved, setIsSaved] = useState(isInSavedPosts);
@@ -93,7 +98,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
 
   const handleAddComment = async (commentContent, isAnonymous = false) => {
     if (!currentUser) {
-      alert("Please log in to add comments");
+      navigate("/auth", { state: { reason: "add comments", from: location.pathname } });
       return false;
     }
 
@@ -116,9 +121,20 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
     }
   };
 
+  const handleEditComment = async (commentId, newContent) => {
+    const success = await editComment(commentId, newContent);
+    if (success) await reloadComments();
+    return success;
+  };
+
+  const handleDeleteComment = async (commentId) => {
+    const success = await deleteComment(commentId);
+    if (success) await reloadComments();
+  };
+
   const handleUpvotePost = async () => {
     if (!currentUser) {
-      alert("Please log in to upvote posts");
+      navigate("/auth", { state: { reason: "upvote posts", from: location.pathname } });
       return;
     }
 
@@ -156,7 +172,7 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
 
   const handleSavePost = async () => {
     if (!currentUser) {
-      alert("Please log in to save posts");
+      navigate("/auth", { state: { reason: "save posts", from: location.pathname } });
       return;
     }
 
@@ -263,6 +279,8 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
           <CommentSection
             comments={comments}
             onAddComment={handleAddComment}
+            onEditComment={handleEditComment}
+            onDeleteComment={handleDeleteComment}
             loading={loadingComments}
             currentUser={currentUser}
           />

@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Navbar.css";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../supabase";
-
 function Navbar({ onCreatePost, onSearch }) {
-  const { currentUser, logout } = useAuth();
-  const [displayName, setDisplayName] = useState("");
+  const { currentUser, logout, displayName } = useAuth();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -25,18 +22,7 @@ function Navbar({ onCreatePost, onSearch }) {
       onSearch(searchTerm);
     }
   };
-  useEffect(() => {
-    if (!currentUser) return;
-    supabase
-      .from("users")
-      .select("display_name")
-      .eq("id", currentUser.id)
-      .single()
-      .then(({ data }) => {
-        if (data) setDisplayName(data.display_name);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentUser]);
+
 
   return (
     <nav className="navbar">
