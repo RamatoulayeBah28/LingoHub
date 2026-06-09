@@ -94,6 +94,21 @@ export function AuthProvider({ children }) {
     throw error;
   }
 
+  async function updatePassword(newPassword) {
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword,
+    });
+    if (!error) return data;
+
+    console.error("Failed to update password:", error);
+    return error;
+  }
+  async function refreshDisplayName() {
+    getDisplayName(currentUser.id).then((name) =>
+      setDisplayName(name || currentUser.email),
+    );
+  }
+
   function loginWithGoogle() {
     return supabase.auth.signInWithOAuth({
       provider: "google",
@@ -140,6 +155,8 @@ export function AuthProvider({ children }) {
     login,
     loginWithGoogle,
     logout,
+    refreshDisplayName,
+    updatePassword,
   };
 
   return (

@@ -20,4 +20,33 @@ export async function getUserName(userId) {
 
 export async function createUserProfile() {}
 
-export async function getUserProfile() {}
+export async function getUserProfile(userId) {
+  const { data } = await supabase
+    .from("users")
+    .select("*")
+    .eq("id", userId)
+    .single();
+  return data || null;
+}
+
+export async function updateUserProfile(userId, fields) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  try {
+    await supabase
+      .from("users")
+      .update({
+        username: fields.username,
+        display_name: fields.display_name,
+        preferred_language: fields.preferred_language,
+      })
+      .eq("id", userId);
+    return true;
+  } catch (e) {
+    console.error("Error updating user profile: ", e);
+    return false;
+  }
+}
