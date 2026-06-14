@@ -50,3 +50,7 @@ export async function updateUserProfile(userId, fields) {
     return false;
   }
 }
+
+export async function deleteUserProfile(userId) {
+  await supabase.from("users").delete().eq("id", userId);
+}

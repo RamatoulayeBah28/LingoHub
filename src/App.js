@@ -11,6 +11,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PostForm from "./components/PostForm";
+import Profile from "./components/Profile";
 
 function AppContent() {
   const [showCreateForm, setShowCreateForm] = useState(false);
@@ -64,6 +65,14 @@ function AppContent() {
             element={
               <ProtectedRoute reason="view your posts">
                 <MyPosts />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute reason="view profile">
+                <Profile />
               </ProtectedRoute>
             }
           />

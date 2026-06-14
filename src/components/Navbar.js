@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Navbar.css";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
 function Navbar({ onCreatePost, onSearch }) {
   const { currentUser, logout, displayName } = useAuth();
   const navigate = useNavigate();
@@ -22,7 +23,6 @@ function Navbar({ onCreatePost, onSearch }) {
       onSearch(searchTerm);
     }
   };
-
 
   return (
     <nav className="navbar">
@@ -70,6 +70,12 @@ function Navbar({ onCreatePost, onSearch }) {
               </button>
               <button className="nav-button logout-btn" onClick={handleLogout}>
                 Logout
+              </button>
+              <button
+                className="user-icon"
+                onClick={() => navigate("/profile")}
+              >
+                <FaUserCircle />
               </button>
             </>
           ) : (

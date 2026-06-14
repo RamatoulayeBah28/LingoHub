@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
-import { getUserProfile, updateUserProfile } from "../services/userService";
+import {
+  getUserProfile,
+  updateUserProfile,
+  deleteUserProfile,
+} from "../services/userService";
 import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export function validatePasswordChange(newPassword, confirmPassword) {
   if (newPassword !== confirmPassword) {
@@ -22,7 +27,8 @@ function Profile() {
   const [savingProfile, setSavingProfile] = useState(false);
   const [savingPassword, setSavingPassword] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const { currentUser, updatePassword, refreshDisplayName } = useAuth();
+  const { currentUser, updatePassword, refreshDisplayName, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadUserProfile = async () => {
@@ -80,6 +86,17 @@ function Profile() {
       setSavingPassword(false);
     }
   };
+
+  async function handleDeleteAccount() {
+    try {
+      await deleteUserProfile(currentUser.id);
+      console.log("Account deleted successfully");
+      await logout();
+      navigate("/");
+    } catch (error) {
+      console.error("Error deleting your account:", error);
+    }
+  }
 
   return (
     <div className="profile">
@@ -145,6 +162,21 @@ function Profile() {
 
         {passwordMessage && <p>{passwordMessage}</p>}
       </div>
+      <button onClick={() => setShowDeleteModal(true)}>Delete Account</button>
+      {showDeleteModal && (
+        <div className="delete-modal">
+          <div className="message">
+            <h3>
+              This is permanent and cannot be undone. Are you sure you want to
+              delete your account?
+            </h3>
+          </div>
+          <div className="buttons">
+            <button onClick={() => setShowDeleteModal(false)}>Cancel</button>
+            <button onClick={handleDeleteAccount}>Confirm Delete</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
