@@ -2,6 +2,15 @@ import { useState, useEffect } from "react";
 import { getUserProfile, updateUserProfile } from "../services/userService";
 import { useAuth } from "../contexts/AuthContext";
 
+export function validatePasswordChange(newPassword, confirmPassword) {
+  if (newPassword !== confirmPassword) {
+    return "Passwords are not matching!";
+  } else if (newPassword.length < 6) {
+    return "Password must be 6 characters long!";
+  }
+  return null;
+}
+
 function Profile() {
   const [profileMessage, setProfileMessage] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
@@ -53,13 +62,13 @@ function Profile() {
   const handleChangePassword = async () => {
     setSavingPassword(true);
     try {
-      if (newPassword !== confirmPassword) {
-        setPasswordMessage("Passwords are not matching!");
-        return;
-      } else if (newPassword.length < 6) {
-        setPasswordMessage("Password must be 6 characters long!");
+      const error = validatePasswordChange(newPassword, confirmPassword);
+      if (error) {
+        setPasswordMessage(error);
+        setSavingPassword(false);
         return;
       }
+
       await updatePassword(newPassword);
       setPasswordMessage("Success updating your password!");
       setNewPassword("");
