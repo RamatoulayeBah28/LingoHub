@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import "../styles/Profile.css";
+
 import {
   getUserProfile,
   updateUserProfile,
@@ -29,6 +31,7 @@ function Profile() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const { currentUser, updatePassword, refreshDisplayName, logout } = useAuth();
   const navigate = useNavigate();
+  const isGoogleUser = currentUser?.app_metadata?.provider === "google";
 
   useEffect(() => {
     const loadUserProfile = async () => {
@@ -41,8 +44,12 @@ function Profile() {
         console.error("Error displaying your profile:", error);
       }
     };
-    loadUserProfile();
-  }, [currentUser]);
+
+    // Only fetch if a currentUser id exists to prevent errors
+    if (currentUser?.id) {
+      loadUserProfile();
+    }
+  }, [currentUser?.id]);
 
   const handleSaveProfile = async () => {
     setSavingProfile(true);
@@ -100,8 +107,16 @@ function Profile() {
 
   return (
     <div className="profile">
+      <div className="profile-header">
+        <button className="back-button" onClick={() => navigate("/")}>
+          ← Back to Feed
+        </button>
+        <h1>Welcome to your Profile</h1>
+      </div>
       <div className="profile-form">
+        <h2>Profile Settings</h2>
         <form>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
@@ -110,6 +125,7 @@ function Profile() {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
+          <label htmlFor="display_name">Display Name</label>
           <input
             type="text"
             id="display_name"
@@ -118,6 +134,7 @@ function Profile() {
             onChange={(e) => setDisplayName(e.target.value)}
             required
           />
+          <label htmlFor="preferred_language">Preferred Language</label>
           <select
             name="preferred_language"
             id="preferred_language"
@@ -137,43 +154,57 @@ function Profile() {
 
         {profileMessage && <p>{profileMessage}</p>}
       </div>
-      <div className="password-form">
-        <form>
-          <input
-            type="password"
-            id="password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            id="confirm_password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </form>
-        <button
-          type="button"
-          onClick={handleChangePassword}
-          disabled={savingPassword}
-        >
-          Save Password
-        </button>
+      {!isGoogleUser && (
+        <div className="password-form">
+          <h2>Change Password</h2>
+          <form>
+            <label htmlFor="password">Enter New Password</label>
+            <input
+              type="password"
+              id="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+            <label htmlFor="confirm_password">Confirm New Password</label>
+            <input
+              type="password"
+              id="confirm_password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </form>
+          <button
+            type="button"
+            onClick={handleChangePassword}
+            disabled={savingPassword}
+          >
+            Save Password
+          </button>
 
-        {passwordMessage && <p>{passwordMessage}</p>}
-      </div>
-      <button onClick={() => setShowDeleteModal(true)}>Delete Account</button>
+          {passwordMessage && <p>{passwordMessage}</p>}
+        </div>
+      )}
+      <button
+        className="delete-account-btn"
+        onClick={() => setShowDeleteModal(true)}
+      >
+        Delete Account
+      </button>
       {showDeleteModal && (
-        <div className="delete-modal">
-          <div className="message">
+        <div
+          className="modal-backdrop"
+          onClick={() => setShowDeleteModal(false)}
+        >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3>
               This is permanent and cannot be undone. Are you sure you want to
               delete your account?
             </h3>
-          </div>
-          <div className="buttons">
-            <button onClick={() => setShowDeleteModal(false)}>Cancel</button>
-            <button onClick={handleDeleteAccount}>Confirm Delete</button>
+
+            <div className="modal-buttons">
+              <button onClick={() => setShowDeleteModal(false)}>Cancel</button>
+              <button onClick={handleDeleteAccount}>Confirm Delete</button>
+            </div>
           </div>
         </div>
       )}

@@ -1,0 +1,223 @@
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Georgia Pro";
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.profile h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Georgia Pro";
+}
+
+/* Section cards */
+.profile-form,
+.password-form {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(140, 140, 68, 0.2);
+}
+
+.profile-form h2,
+.password-form h2 {
+  font-family: "Georgia Pro";
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(140, 140, 68, 0.2);
+}
+
+/* Labels */
+.profile-form label,
+.password-form label {
+  display: block;
+  font-family: "Georgia Pro";
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+.profile-form input,
+.profile-form select,
+.password-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #8c8c44;
+  border-radius: 8px;
+  font-family: "Georgia Pro";
+  font-size: 1rem;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus,
+.password-form input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(140, 140, 68, 0.1);
+}
+
+/* Save buttons */
+.profile-form button,
+.password-form button {
+  background: #8c8c44;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-family: "Georgia Pro";
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-form button:hover:not(:disabled),
+.password-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(140, 140, 68, 0.3);
+}
+
+.profile-form button:disabled,
+.password-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Feedback messages */
+.profile-form p,
+.password-form p {
+  font-family: "Georgia Pro";
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #2d7a2d;
+}
+
+
+
+/* Delete account button */
+.delete-account-btn {
+  background: none;
+  color: #8B3A3A;
+  border: 1px solid #8B3A3A;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-family: "Georgia Pro";
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+
+
+.delete-account-btn:hover {
+  background: #8B3A3A;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #8B3A3A;
+  font-family: "Georgia Pro";
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-buttons button:first-child {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-family: "Georgia Pro";
+  transition: all 0.3s ease;
+}
+
+.modal-buttons button:first-child:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons button:last-child {
+  background: #8B3A3A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-family: "Georgia Pro";
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons button:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 58, 58, 0.3);
+}

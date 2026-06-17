@@ -70,6 +70,9 @@ function Dashboard() {
           ← Back to Feed
         </button>
         <h1>Saved Posts</h1>
+        <div className="posts-count">
+          {savedPosts.length} {savedPosts.length === 1 ? "post" : "posts"}
+        </div>
       </div>
 
       <div className="dashboard-content">

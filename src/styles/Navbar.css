@@ -142,6 +142,28 @@
   background: #8b3a3aba;
 }
 
+.user-icon {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fbf6f1;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.user-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .login-prompt {
   font-size: 0.9rem;
   opacity: 0.8;
