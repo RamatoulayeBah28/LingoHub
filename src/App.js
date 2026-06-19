@@ -1,4 +1,5 @@
-// App.js
+// @flow
+
 import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -59,7 +60,6 @@ function AppContent() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/my-posts"
             element={
@@ -76,7 +76,6 @@ function AppContent() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/"
             element={
@@ -86,7 +85,6 @@ function AppContent() {
               />
             }
           />
-
           <Route path="/auth" element={<AuthPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

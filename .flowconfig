@@ -1,0 +1,19 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+untyped-type-import=error
+internal-type=error
+unsafe-object-assign=error
+nested-component=error
+nested-hook=error
+libdef-override=error
+
+[options]
+module.name_mapper='^@vercel/analytics/react$' -> '<PROJECT_ROOT>/node_modules/@vercel/analytics/dist/react/index.js'
+module.name_mapper='^@vercel/analytics$' -> '<PROJECT_ROOT>/node_modules/@vercel/analytics/dist/index.js'
+
+[strict]
