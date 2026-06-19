@@ -262,7 +262,12 @@ function PostDetail({ post, onClose, isInSavedPosts = false, onPostUnsaved }) {
 
           {post.imageUrl && (
             <div className="post-image">
-              <img src={post.imageUrl} alt="Post content" />
+              <img
+                src={post.imageUrl}
+                alt="Post content"
+                width="800"
+                height="400"
+              />
             </div>
           )}
 

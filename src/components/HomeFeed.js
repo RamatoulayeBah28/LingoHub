@@ -241,8 +241,10 @@ function HomeFeed({ searchTerm, postCreatedSignal }) {
       {/* Posts Feed */}
       <div className="posts-container">
         {loading ? (
-          <div className="loading-state">
-            <p>Loading posts...</p>
+          <div className="posts-grid">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div className="post-card-skeleton" key={index} />
+            ))}
           </div>
         ) : error ? (
           <div className="error-state">

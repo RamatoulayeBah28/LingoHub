@@ -78,7 +78,9 @@ function PostCard({
     e.stopPropagation(); // Prevent triggering post click
 
     if (!currentUser) {
-      navigate("/auth", { state: { reason: "save posts", from: location.pathname } });
+      navigate("/auth", {
+        state: { reason: "save posts", from: location.pathname },
+      });
       return;
     }
 
@@ -106,7 +108,9 @@ function PostCard({
     e.stopPropagation(); // Prevent triggering post click
 
     if (!currentUser) {
-      navigate("/auth", { state: { reason: "upvote posts", from: location.pathname } });
+      navigate("/auth", {
+        state: { reason: "upvote posts", from: location.pathname },
+      });
       return;
     }
 
@@ -180,7 +184,7 @@ function PostCard({
 
       {post.imageUrl && (
         <div className="post-image">
-          <img src={post.imageUrl} alt="Post" />
+          <img src={post.imageUrl} alt="Post" width="350" height="200" />
         </div>
       )}
 
